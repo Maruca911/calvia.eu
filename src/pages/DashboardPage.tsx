@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import {
-  Building2, Star, Eye, Search, Edit3, Save, X, Mail,
+  Building2, Star, Eye, Edit3, Save, X, Mail,
   Phone, Globe, MapPin, MessageSquare, ArrowRight, LogIn,
 } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
@@ -257,6 +257,8 @@ export default function DashboardPage() {
   const [editingId, setEditingId] = useState<string | null>(null);
   const [authModalOpen, setAuthModalOpen] = useState(false);
 
+  const [totalReviews, setTotalReviews] = useState(0);
+
   const fetchBusinesses = useCallback(async () => {
     if (!user) {
       setLoading(false);
@@ -268,7 +270,18 @@ export default function DashboardPage() {
       .select('*, categories(*), areas(*)')
       .eq('owner_id', user.id);
 
-    setBusinesses((data || []) as DashboardBusiness[]);
+    const biz = (data || []) as DashboardBusiness[];
+    setBusinesses(biz);
+
+    if (biz.length > 0) {
+      const ids = biz.map((b) => b.id);
+      const { count } = await supabase
+        .from('reviews')
+        .select('id', { count: 'exact', head: true })
+        .in('business_id', ids);
+      setTotalReviews(count || 0);
+    }
+
     setLoading(false);
   }, [user]);
 
@@ -342,10 +355,10 @@ export default function DashboardPage() {
               </div>
               <div className="card p-6 text-center">
                 <div className="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center mx-auto mb-3">
-                  <Search className="w-6 h-6 text-green-600" />
+                  <MessageSquare className="w-6 h-6 text-green-600" />
                 </div>
-                <p className="text-3xl font-bold text-ocean-800">--</p>
-                <p className="text-sm text-gray-500 mt-1">{t('dashboard.searchAppearances')}</p>
+                <p className="text-3xl font-bold text-ocean-800">{totalReviews}</p>
+                <p className="text-sm text-gray-500 mt-1">{t('dashboard.reviewsReceived')}</p>
               </div>
             </div>
 

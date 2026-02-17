@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { supabase } from '../lib/supabase';
 import type { BusinessWithRelations } from '../types/database';
 
 export function useBusiness(slug: string | undefined) {
   const [business, setBusiness] = useState<BusinessWithRelations | null>(null);
   const [loading, setLoading] = useState(true);
+  const viewTracked = useRef<string | null>(null);
 
   useEffect(() => {
     if (!slug) {
@@ -12,7 +13,7 @@ export function useBusiness(slug: string | undefined) {
       return;
     }
 
-    async function fetch() {
+    async function load() {
       setLoading(true);
       const { data } = await supabase
         .from('businesses')
@@ -22,8 +23,13 @@ export function useBusiness(slug: string | undefined) {
 
       setBusiness(data);
       setLoading(false);
+
+      if (data && viewTracked.current !== data.id) {
+        viewTracked.current = data.id;
+        supabase.rpc('increment_view_count', { business_uuid: data.id });
+      }
     }
-    fetch();
+    load();
   }, [slug]);
 
   return { business, loading };
