@@ -1,0 +1,2 @@
+# SPA fallback - serve index.html for all routes (with 200 status to preserve URLs)
+/*    /index.html   200
