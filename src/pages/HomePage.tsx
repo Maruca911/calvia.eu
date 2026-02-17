@@ -118,8 +118,8 @@ function StatsBar() {
           <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 lg:p-8">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
               {[
-                { icon: Building2, value: 1000, suffix: '+', label: t('home.localBusinesses'), color: 'text-ocean-500 bg-ocean-50' },
-                { icon: MapPin, value: 23, suffix: '', label: t('home.villagesAndAreas'), color: 'text-sun-500 bg-sun-50' },
+                { icon: Building2, value: 1400, suffix: '+', label: t('home.localBusinesses'), color: 'text-ocean-500 bg-ocean-50' },
+                { icon: MapPin, value: 24, suffix: '', label: t('home.villagesAndAreas'), color: 'text-sun-500 bg-sun-50' },
                 { icon: Star, value: 30, suffix: '', label: t('home.categories'), color: 'text-green-600 bg-green-50' },
               ].map((stat, i) => (
                 <div key={i} className="text-center">
