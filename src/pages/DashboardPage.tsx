@@ -242,7 +242,7 @@ function BusinessReviews({ businessId }: { businessId: string }) {
         to={l(`/profile/${businessId}`)}
         className="inline-flex items-center gap-1 text-sm text-ocean-500 hover:text-sun-500 font-medium transition-colors"
       >
-        View all on profile <ArrowRight className="w-3 h-3" />
+        {t('dashboard.viewAllOnProfile')} <ArrowRight className="w-3 h-3" />
       </Link>
     </div>
   );

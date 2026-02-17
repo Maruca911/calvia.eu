@@ -455,6 +455,7 @@ const en = {
     saved: 'Changes saved successfully.',
     reviewsReceived: 'Reviews Received',
     noReviewsYet: 'No reviews received yet.',
+    viewAllOnProfile: 'View all on profile',
     profileViews: 'Profile Views',
     searchAppearances: 'Search Appearances',
     signInRequired: 'Please sign in to access the business dashboard.',

@@ -59,8 +59,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }
 
   async function resetPassword(email: string) {
+    const lang = localStorage.getItem('calvia-lang') || 'en';
     const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: `${window.location.origin}/en/account`,
+      redirectTo: `${window.location.origin}/${lang}/account`,
     });
     if (error) return { error: error.message };
     return { error: null };

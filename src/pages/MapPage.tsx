@@ -13,6 +13,10 @@ import 'leaflet/dist/leaflet.css';
 const CALVIA_CENTER: [number, number] = [39.545, 2.505];
 const DEFAULT_ZOOM = 12;
 
+function escapeHtml(str: string) {
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
 const MARKER_ICON = L.divIcon({
   className: '',
   html: `<div style="width:28px;height:28px;background:#014BB5;border:3px solid white;border-radius:50%;box-shadow:0 2px 6px rgba(0,0,0,0.3);"></div>`,
@@ -93,17 +97,23 @@ export default function MapPage() {
         ? `<span style="color:#d97706;font-weight:600;font-size:12px;">&#9733; ${biz.rating}</span>`
         : '';
 
+      const safeName = escapeHtml(biz.name);
+      const safeDesc = biz.description ? escapeHtml(biz.description) : '';
+      const safeCat = biz.categories ? escapeHtml(biz.categories.name) : '';
+      const safeImg = biz.image_url ? escapeHtml(biz.image_url) : '';
+      const profileUrl = `${window.location.origin}${l(`/profile/${biz.slug || biz.id}`)}`;
+
       const popupContent = `
         <div style="min-width:200px;font-family:system-ui,sans-serif;">
-          ${biz.image_url ? `<img src="${biz.image_url}" alt="${biz.name}" style="width:100%;height:100px;object-fit:cover;border-radius:8px 8px 0 0;margin:-12px -12px 8px -12px;width:calc(100% + 24px);" />` : ''}
+          ${safeImg ? `<img src="${safeImg}" alt="${safeName}" style="width:100%;height:100px;object-fit:cover;border-radius:8px 8px 0 0;margin:-12px -12px 8px -12px;width:calc(100% + 24px);" />` : ''}
           <div style="padding:0 2px;">
-            <div style="font-weight:700;color:#0c3060;font-size:14px;margin-bottom:4px;">${biz.name}</div>
+            <div style="font-weight:700;color:#0c3060;font-size:14px;margin-bottom:4px;">${safeName}</div>
             <div style="display:flex;gap:6px;align-items:center;margin-bottom:6px;">
-              ${biz.categories ? `<span style="background:#EFF6FF;color:#014BB5;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:500;">${biz.categories.name}</span>` : ''}
+              ${safeCat ? `<span style="background:#EFF6FF;color:#014BB5;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:500;">${safeCat}</span>` : ''}
               ${ratingHtml}
             </div>
-            ${biz.description ? `<p style="color:#6b7280;font-size:12px;line-height:1.4;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">${biz.description}</p>` : ''}
-            <a href="${window.location.origin}${l(`/profile/${biz.slug || biz.id}`)}" style="color:#014BB5;font-size:12px;font-weight:600;text-decoration:none;">${t('map.viewProfile')} &rarr;</a>
+            ${safeDesc ? `<p style="color:#6b7280;font-size:12px;line-height:1.4;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">${safeDesc}</p>` : ''}
+            <a href="${profileUrl}" style="color:#014BB5;font-size:12px;font-weight:600;text-decoration:none;">${escapeHtml(t('map.viewProfile'))} &rarr;</a>
           </div>
         </div>
       `;
