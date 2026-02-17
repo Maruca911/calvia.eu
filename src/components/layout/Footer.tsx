@@ -87,6 +87,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to={l('/map')} className="text-white hover:text-sun-400 transition-colors text-sm">
+                  {t('nav.map')}
+                </Link>
+              </li>
+              <li>
                 <Link to={l('/about')} className="text-white hover:text-sun-400 transition-colors text-sm">
                   {t('footer.aboutTheConcept')}
                 </Link>

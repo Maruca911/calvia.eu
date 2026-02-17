@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, LogIn, LogOut, User, Waves, Mountain, Bike, BookOpen } from 'lucide-react';
+import { Menu, X, ChevronDown, LogIn, LogOut, User, Waves, Mountain, Bike, BookOpen, MapPin, LayoutDashboard } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useLocalizedPath } from '../../hooks/useLanguage';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -212,6 +212,14 @@ export default function Header() {
             </div>
 
             <Link
+              to={l('/map')}
+              className={`flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium ${textColor} hover:bg-black/5 transition-all`}
+            >
+              <MapPin className="w-4 h-4" />
+              {t('nav.map')}
+            </Link>
+
+            <Link
               to={l('/about')}
               className={`px-3 py-2 rounded-lg text-sm font-medium ${textColor} hover:bg-black/5 transition-all`}
             >
@@ -222,6 +230,14 @@ export default function Header() {
               <LanguageSwitcher />
               {user ? (
                 <div className="flex items-center gap-1">
+                  <Link
+                    to={l('/dashboard')}
+                    aria-label={t('nav.dashboard')}
+                    className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium
+                               ${textColor} hover:bg-black/5 transition-all`}
+                  >
+                    <LayoutDashboard className="w-4 h-4" />
+                  </Link>
                   <Link
                     to={l('/account')}
                     aria-label={t('account.title')}
@@ -346,6 +362,11 @@ export default function Header() {
               )}
             </div>
 
+            <Link to={l('/map')} className="flex items-center gap-2 py-2 text-sm font-medium text-ocean-800">
+              <MapPin className="w-4 h-4 text-ocean-500" />
+              {t('nav.map')}
+            </Link>
+
             <Link to={l('/about')} className="block py-2 text-sm font-medium text-ocean-800">
               {t('nav.aboutTheConcept')}
             </Link>
@@ -354,6 +375,13 @@ export default function Header() {
               <LanguageSwitcher />
               {user ? (
                 <>
+                  <Link
+                    to={l('/dashboard')}
+                    className="btn-secondary text-center text-sm flex items-center justify-center gap-2"
+                  >
+                    <LayoutDashboard className="w-4 h-4" />
+                    {t('nav.dashboard')}
+                  </Link>
                   <Link
                     to={l('/account')}
                     className="btn-secondary text-center text-sm flex items-center justify-center gap-2"

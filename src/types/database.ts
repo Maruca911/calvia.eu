@@ -29,6 +29,16 @@ export interface SocialLinks {
   tiktok?: string;
 }
 
+export interface OpeningHours {
+  monday?: string;
+  tuesday?: string;
+  wednesday?: string;
+  thursday?: string;
+  friday?: string;
+  saturday?: string;
+  sunday?: string;
+}
+
 export interface Business {
   id: string;
   name: string;
@@ -46,6 +56,9 @@ export interface Business {
   rating: number | null;
   notes: string | null;
   social_links: SocialLinks;
+  image_url: string;
+  images: string[];
+  opening_hours: OpeningHours;
   created_at: string;
 }
 

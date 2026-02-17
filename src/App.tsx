@@ -20,6 +20,8 @@ const ProfilePage = lazy(() => import('./pages/ProfilePage'));
 const BusinessProfilePage = lazy(() => import('./pages/BusinessProfilePage'));
 const GuidesPage = lazy(() => import('./pages/GuidesPage'));
 const GuidePage = lazy(() => import('./pages/GuidePage'));
+const DashboardPage = lazy(() => import('./pages/DashboardPage'));
+const MapPage = lazy(() => import('./pages/MapPage'));
 
 function PageLoader() {
   return (
@@ -52,6 +54,8 @@ function LocalizedRoutes() {
       <Route path="impressum" element={<Suspense fallback={<PageLoader />}><ImpressumPage /></Suspense>} />
       <Route path="terms" element={<Suspense fallback={<PageLoader />}><TermsPage /></Suspense>} />
       <Route path="account" element={<Suspense fallback={<PageLoader />}><ProfilePage /></Suspense>} />
+      <Route path="dashboard" element={<Suspense fallback={<PageLoader />}><DashboardPage /></Suspense>} />
+      <Route path="map" element={<Suspense fallback={<PageLoader />}><MapPage /></Suspense>} />
     </Route>
   );
 }
