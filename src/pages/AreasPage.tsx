@@ -4,11 +4,13 @@ import { MapPin } from 'lucide-react';
 import { useAreas } from '../hooks/useAreas';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { useLocalizedPath } from '../hooks/useLanguage';
+import { useTranslatedList } from '../hooks/useTranslatedContent';
 
 export default function AreasPage() {
   const { t } = useTranslation();
   const { l } = useLocalizedPath();
-  const { areas, loading } = useAreas();
+  const { areas: rawAreas, loading } = useAreas();
+  const areas = useTranslatedList('area', rawAreas, ['name', 'description']);
   usePageMeta(
     t('seo.areasTitle'),
     t('seo.areasDesc')

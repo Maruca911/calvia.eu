@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { BookOpen, MapPin, Tag, Calendar, Waves, Mountain, Bike, ChevronRight } from 'lucide-react';
 import { useGuides } from '../hooks/useGuide';
 import { useLocalizedPath } from '../hooks/useLanguage';
+import { useTranslatedList } from '../hooks/useTranslatedContent';
 import type { Guide } from '../types/database';
 
 const SUBCATEGORY_IDS = ['all', 'beaches', 'hiking-trails', 'bike-trails'] as const;
@@ -21,7 +22,8 @@ function filterGuides(guides: Guide[], filter: string): Guide[] {
 }
 
 export default function GuidesPage() {
-  const { guides, loading } = useGuides();
+  const { guides: rawGuides, loading } = useGuides();
+  const guides = useTranslatedList('guide', rawGuides, ['title', 'description']);
   const [activeFilter, setActiveFilter] = useState('all');
   const location = useLocation();
   const sectionRef = useRef<HTMLDivElement>(null);

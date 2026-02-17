@@ -11,6 +11,7 @@ import type { SocialLinks } from '../types/database';
 import SocialLinksBar from '../components/businesses/SocialLinksBar';
 import ReviewSection from '../components/reviews/ReviewSection';
 import BusinessProfileSchema from '../components/seo/BusinessProfileSchema';
+import BreadcrumbSchema from '../components/seo/BreadcrumbSchema';
 
 function ProfileSkeleton() {
   return (
@@ -82,6 +83,12 @@ export default function BusinessProfilePage() {
   return (
     <div className="pt-24 pb-16">
       <BusinessProfileSchema business={business} />
+      <BreadcrumbSchema crumbs={[
+        { name: 'Home', path: `/${lang || 'en'}` },
+        { name: t('nav.businesses'), path: `/${lang || 'en'}/businesses` },
+        ...(business.categories ? [{ name: business.categories.name, path: `/${lang || 'en'}/businesses/${business.categories.slug}` }] : []),
+        { name: business.name, path: `/${lang || 'en'}/profile/${business.slug}` },
+      ]} />
 
       <section className="bg-gradient-to-br from-ocean-500 to-ocean-700 py-12 lg:py-16">
         <div className="container-wide">

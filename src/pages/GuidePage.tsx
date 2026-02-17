@@ -7,6 +7,9 @@ import { useGuide } from '../hooks/useGuide';
 import { useFAQs } from '../hooks/useFAQs';
 import { useLocalizedPath } from '../hooks/useLanguage';
 import FAQSection from '../components/ui/FAQSection';
+import BreadcrumbSchema from '../components/seo/BreadcrumbSchema';
+import ArticleSchema from '../components/seo/ArticleSchema';
+import { useTranslatedContent } from '../hooks/useTranslatedContent';
 
 function GuideSkeleton() {
   return (
@@ -30,9 +33,10 @@ export default function GuidePage() {
   const { faqs } = useFAQs('guide', slug);
   const { t } = useTranslation();
   const { l, lang } = useLocalizedPath();
+  const { tf } = useTranslatedContent('guide', guide?.id);
   const sanitizedContent = useMemo(
-    () => (guide ? DOMPurify.sanitize(guide.content) : ''),
-    [guide]
+    () => (guide ? DOMPurify.sanitize(tf('content', guide.content)) : ''),
+    [guide, tf]
   );
 
   useEffect(() => {
@@ -68,6 +72,12 @@ export default function GuidePage() {
 
   return (
     <div className="pt-24 pb-16">
+      <BreadcrumbSchema crumbs={[
+        { name: 'Home', path: `/${lang || 'en'}` },
+        { name: t('nav.guides'), path: `/${lang || 'en'}/guides` },
+        { name: guide.title, path: `/${lang || 'en'}/guides/${guide.slug}` },
+      ]} />
+      <ArticleSchema guide={guide} />
       <section className="relative overflow-hidden">
         {guide.image_url ? (
           <>
@@ -91,9 +101,9 @@ export default function GuidePage() {
               <ChevronLeft className="w-4 h-4" /> {t('guides.allGuidesLink')}
             </Link>
             <h1 className="font-display text-3xl lg:text-5xl font-bold text-white mb-4 max-w-3xl">
-              {guide.title}
+              {tf('title', guide.title)}
             </h1>
-            <p className="text-ocean-100 text-lg max-w-2xl">{guide.description}</p>
+            <p className="text-ocean-100 text-lg max-w-2xl">{tf('description', guide.description)}</p>
 
             <div className="flex flex-wrap items-center gap-3 mt-6">
               {guide.area_slug && (

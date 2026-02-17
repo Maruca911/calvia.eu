@@ -7,15 +7,18 @@ import { supabase } from '../lib/supabase';
 import type { Area, Business, Category } from '../types/database';
 import { useFAQs } from '../hooks/useFAQs';
 import FAQSection from '../components/ui/FAQSection';
+import BreadcrumbSchema from '../components/seo/BreadcrumbSchema';
+import { useTranslatedContent } from '../hooks/useTranslatedContent';
 
 export default function AreaDetailPage() {
   const { t } = useTranslation();
-  const { l } = useLocalizedPath();
+  const { l, lang } = useLocalizedPath();
   const { slug } = useParams<{ slug: string }>();
   const [area, setArea] = useState<Area | null>(null);
   const [businesses, setBusinesses] = useState<(Business & { categories: Category })[]>([]);
   const [loading, setLoading] = useState(true);
   const { faqs } = useFAQs('area', slug);
+  const { tf } = useTranslatedContent('area', area?.id);
 
   useEffect(() => {
     async function fetchData() {
@@ -83,6 +86,11 @@ export default function AreaDetailPage() {
 
   return (
     <div className="pt-24 pb-16">
+      <BreadcrumbSchema crumbs={[
+        { name: 'Home', path: `/${lang || 'en'}` },
+        { name: t('nav.areas'), path: `/${lang || 'en'}/areas` },
+        { name: area.name, path: `/${lang || 'en'}/areas/${slug}` },
+      ]} />
       <section className="relative h-80 lg:h-96 overflow-hidden">
         <img
           src={area.image_url}
@@ -112,8 +120,8 @@ export default function AreaDetailPage() {
       <section className="container-wide py-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           <div className="lg:col-span-2">
-            <h2 className="font-display text-2xl font-bold text-ocean-800 mb-4">{t('areas.aboutArea', { name: area.name })}</h2>
-            <p className="text-gray-600 leading-relaxed mb-8">{area.description}</p>
+            <h2 className="font-display text-2xl font-bold text-ocean-800 mb-4">{t('areas.aboutArea', { name: tf('name', area.name) })}</h2>
+            <p className="text-gray-600 leading-relaxed mb-8">{tf('description', area.description)}</p>
 
             {area.highlights.length > 0 && (
               <div className="mb-10">

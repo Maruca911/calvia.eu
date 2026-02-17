@@ -9,6 +9,7 @@ import BusinessFilters from '../components/businesses/BusinessFilters';
 import SearchBar from '../components/layout/SearchBar';
 import { getIcon } from '../lib/icons';
 import { usePageMeta } from '../hooks/usePageMeta';
+import { useTranslatedList } from '../hooks/useTranslatedContent';
 
 export default function BusinessesPage() {
   const { t } = useTranslation();
@@ -16,8 +17,10 @@ export default function BusinessesPage() {
     t('seo.businessesTitle'),
     t('seo.businessesDesc')
   );
-  const { categories, loading: catsLoading } = useCategories();
-  const { areas, loading: areasLoading } = useAreas();
+  const { categories: rawCategories, loading: catsLoading } = useCategories();
+  const { areas: rawAreas, loading: areasLoading } = useAreas();
+  const categories = useTranslatedList('category', rawCategories, ['name', 'description']);
+  const areas = useTranslatedList('area', rawAreas, ['name', 'description']);
   const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedArea, setSelectedArea] = useState('');
   const [page, setPage] = useState(1);

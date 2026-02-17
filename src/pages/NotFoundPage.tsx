@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Home, ArrowLeft } from 'lucide-react';
@@ -6,6 +7,21 @@ import { useLocalizedPath } from '../hooks/useLanguage';
 export default function NotFoundPage() {
   const { t } = useTranslation();
   const { l } = useLocalizedPath();
+
+  useEffect(() => {
+    document.title = 'Page Not Found | Calvia.app';
+    let meta = document.querySelector('meta[name="robots"]') as HTMLMetaElement;
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.name = 'robots';
+      document.head.appendChild(meta);
+    }
+    meta.content = 'noindex, nofollow';
+
+    return () => {
+      meta.content = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
+    };
+  }, []);
 
   return (
     <div className="pt-24 pb-16 min-h-screen flex items-center justify-center">

@@ -9,14 +9,17 @@ import { useFAQs } from '../hooks/useFAQs';
 import type { Category } from '../types/database';
 import { getIcon } from '../lib/icons';
 import FAQSection from '../components/ui/FAQSection';
+import BreadcrumbSchema from '../components/seo/BreadcrumbSchema';
+import { useTranslatedContent } from '../hooks/useTranslatedContent';
 
 export default function CategoryPage() {
   const { t } = useTranslation();
-  const { l } = useLocalizedPath();
+  const { l, lang } = useLocalizedPath();
   const { slug } = useParams<{ slug: string }>();
   const [category, setCategory] = useState<Category | null>(null);
   const [page, setPage] = useState(1);
   const { faqs } = useFAQs('category', slug);
+  const { tf } = useTranslatedContent('category', category?.id);
 
   useEffect(() => {
     async function fetchCat() {
@@ -63,6 +66,11 @@ export default function CategoryPage() {
 
   return (
     <div className="pt-24 pb-16">
+      <BreadcrumbSchema crumbs={[
+        { name: 'Home', path: `/${lang || 'en'}` },
+        { name: t('nav.businesses'), path: `/${lang || 'en'}/businesses` },
+        { name: category?.name || '', path: `/${lang || 'en'}/businesses/${slug}` },
+      ]} />
       <section className="bg-gradient-to-br from-ocean-500 to-ocean-700 py-16">
         <div className="container-wide">
           <Link
@@ -79,7 +87,7 @@ export default function CategoryPage() {
             )}
             <div>
               <h1 className="font-display text-3xl lg:text-4xl font-bold text-white">
-                {category?.name}
+                {category ? tf('name', category.name) : ''}
               </h1>
               <p className="text-ocean-200 mt-1">{totalCount} {t('category.businessesFound')}</p>
             </div>
