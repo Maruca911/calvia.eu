@@ -14,6 +14,9 @@ const AboutPage = lazy(() => import('./pages/AboutPage'));
 const ConsumerSignupPage = lazy(() => import('./pages/ConsumerSignupPage'));
 const BusinessSignupPage = lazy(() => import('./pages/BusinessSignupPage'));
 const PrivacyPage = lazy(() => import('./pages/PrivacyPage'));
+const ImpressumPage = lazy(() => import('./pages/ImpressumPage'));
+const TermsPage = lazy(() => import('./pages/TermsPage'));
+const ProfilePage = lazy(() => import('./pages/ProfilePage'));
 const BusinessProfilePage = lazy(() => import('./pages/BusinessProfilePage'));
 const GuidesPage = lazy(() => import('./pages/GuidesPage'));
 const GuidePage = lazy(() => import('./pages/GuidePage'));
@@ -46,6 +49,9 @@ function LocalizedRoutes() {
       <Route path="signup/consumer" element={<Suspense fallback={<PageLoader />}><ConsumerSignupPage /></Suspense>} />
       <Route path="signup/business" element={<Suspense fallback={<PageLoader />}><BusinessSignupPage /></Suspense>} />
       <Route path="privacy" element={<Suspense fallback={<PageLoader />}><PrivacyPage /></Suspense>} />
+      <Route path="impressum" element={<Suspense fallback={<PageLoader />}><ImpressumPage /></Suspense>} />
+      <Route path="terms" element={<Suspense fallback={<PageLoader />}><TermsPage /></Suspense>} />
+      <Route path="account" element={<Suspense fallback={<PageLoader />}><ProfilePage /></Suspense>} />
     </Route>
   );
 }

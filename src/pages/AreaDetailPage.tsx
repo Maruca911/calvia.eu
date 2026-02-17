@@ -35,6 +35,7 @@ export default function AreaDetailPage() {
           .from('businesses')
           .select('*, categories(*)')
           .eq('area_id', areaData.id)
+          .eq('is_placeholder', false)
           .order('name')
           .limit(30);
         if (bizData) setBusinesses(bizData as any);

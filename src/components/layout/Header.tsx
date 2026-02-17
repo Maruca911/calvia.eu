@@ -221,15 +221,24 @@ export default function Header() {
             <div className="flex items-center gap-2 ml-3">
               <LanguageSwitcher />
               {user ? (
-                <button
-                  onClick={() => signOut()}
-                  aria-label={t('nav.signOut')}
-                  className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium
-                             ${textColor} hover:bg-black/5 transition-all`}
-                >
-                  <User className="w-4 h-4" />
-                  <LogOut className="w-4 h-4" />
-                </button>
+                <div className="flex items-center gap-1">
+                  <Link
+                    to={l('/account')}
+                    aria-label={t('account.title')}
+                    className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium
+                               ${textColor} hover:bg-black/5 transition-all`}
+                  >
+                    <User className="w-4 h-4" />
+                  </Link>
+                  <button
+                    onClick={() => signOut()}
+                    aria-label={t('nav.signOut')}
+                    className={`flex items-center px-2 py-2 rounded-lg text-sm font-medium
+                               ${textColor} hover:bg-black/5 transition-all`}
+                  >
+                    <LogOut className="w-4 h-4" />
+                  </button>
+                </div>
               ) : (
                 <button
                   onClick={() => setAuthModalOpen(true)}
@@ -344,13 +353,22 @@ export default function Header() {
             <div className="flex flex-col gap-2 pt-2 border-t border-gray-100">
               <LanguageSwitcher />
               {user ? (
-                <button
-                  onClick={() => signOut()}
-                  className="btn-secondary text-center text-sm flex items-center justify-center gap-2"
-                >
-                  <LogOut className="w-4 h-4" />
-                  {t('nav.signOut')}
-                </button>
+                <>
+                  <Link
+                    to={l('/account')}
+                    className="btn-secondary text-center text-sm flex items-center justify-center gap-2"
+                  >
+                    <User className="w-4 h-4" />
+                    {t('account.title')}
+                  </Link>
+                  <button
+                    onClick={() => signOut()}
+                    className="text-center text-sm flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold text-gray-600 hover:bg-gray-100 transition-all"
+                  >
+                    <LogOut className="w-4 h-4" />
+                    {t('nav.signOut')}
+                  </button>
+                </>
               ) : (
                 <button
                   onClick={() => { setAuthModalOpen(true); setMobileOpen(false); }}

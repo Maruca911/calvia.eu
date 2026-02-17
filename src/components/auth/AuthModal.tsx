@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { X, Mail, Lock, User, Loader2 } from 'lucide-react';
+import { X, Mail, Lock, User, Loader2, ArrowLeft } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../../contexts/AuthContext';
 
@@ -11,14 +11,14 @@ interface AuthModalProps {
 
 export default function AuthModal({ isOpen, onClose, defaultTab = 'signin' }: AuthModalProps) {
   const { t } = useTranslation();
-  const [tab, setTab] = useState<'signin' | 'signup'>(defaultTab);
+  const [tab, setTab] = useState<'signin' | 'signup' | 'reset'>(defaultTab);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [displayName, setDisplayName] = useState('');
   const [error, setError] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState('');
-  const { signIn, signUp } = useAuth();
+  const { signIn, signUp, resetPassword } = useAuth();
 
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -50,8 +50,8 @@ export default function AuthModal({ isOpen, onClose, defaultTab = 'signin' }: Au
     setSuccess('');
   }
 
-  function switchTab(t: 'signin' | 'signup') {
-    setTab(t);
+  function switchTab(newTab: 'signin' | 'signup' | 'reset') {
+    setTab(newTab);
     resetForm();
   }
 
@@ -60,6 +60,17 @@ export default function AuthModal({ isOpen, onClose, defaultTab = 'signin' }: Au
     setError('');
     setSuccess('');
     setSubmitting(true);
+
+    if (tab === 'reset') {
+      const { error: err } = await resetPassword(email);
+      if (err) {
+        setError(err);
+      } else {
+        setSuccess(t('auth.resetEmailSent'));
+      }
+      setSubmitting(false);
+      return;
+    }
 
     if (tab === 'signup') {
       if (!displayName.trim()) {
@@ -90,8 +101,14 @@ export default function AuthModal({ isOpen, onClose, defaultTab = 'signin' }: Au
     setSubmitting(false);
   }
 
+  const modalLabel = tab === 'reset'
+    ? t('auth.resetPassword')
+    : tab === 'signin'
+      ? t('auth.signIn')
+      : t('auth.createAccount');
+
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center" role="dialog" aria-modal="true" aria-label={tab === 'signin' ? t('auth.signIn') : t('auth.createAccount')}>
+    <div className="fixed inset-0 z-[100] flex items-center justify-center" role="dialog" aria-modal="true" aria-label={modalLabel}>
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
       <div ref={modalRef} className="relative bg-white rounded-2xl shadow-2xl w-full max-w-md mx-4 overflow-hidden animate-slide-down">
         <button
@@ -105,37 +122,55 @@ export default function AuthModal({ isOpen, onClose, defaultTab = 'signin' }: Au
         <div className="p-8">
           <div className="text-center mb-6">
             <h2 className="font-display text-2xl font-bold text-ocean-800">
-              {tab === 'signin' ? t('auth.welcomeBack') : t('auth.createAccount')}
+              {tab === 'reset'
+                ? t('auth.resetPassword')
+                : tab === 'signin'
+                  ? t('auth.welcomeBack')
+                  : t('auth.createAccount')}
             </h2>
             <p className="text-gray-500 text-sm mt-1">
-              {tab === 'signin'
-                ? t('auth.signInDesc')
-                : t('auth.signUpDesc')}
+              {tab === 'reset'
+                ? t('auth.resetPasswordDesc')
+                : tab === 'signin'
+                  ? t('auth.signInDesc')
+                  : t('auth.signUpDesc')}
             </p>
           </div>
 
-          <div className="flex bg-gray-100 rounded-lg p-1 mb-6">
+          {tab !== 'reset' && (
+            <div className="flex bg-gray-100 rounded-lg p-1 mb-6">
+              <button
+                onClick={() => switchTab('signin')}
+                className={`flex-1 text-sm font-medium py-2 rounded-md transition-all ${
+                  tab === 'signin'
+                    ? 'bg-white text-ocean-800 shadow-sm'
+                    : 'text-gray-500 hover:text-gray-700'
+                }`}
+              >
+                {t('auth.signIn')}
+              </button>
+              <button
+                onClick={() => switchTab('signup')}
+                className={`flex-1 text-sm font-medium py-2 rounded-md transition-all ${
+                  tab === 'signup'
+                    ? 'bg-white text-ocean-800 shadow-sm'
+                    : 'text-gray-500 hover:text-gray-700'
+                }`}
+              >
+                {t('auth.signUp')}
+              </button>
+            </div>
+          )}
+
+          {tab === 'reset' && (
             <button
               onClick={() => switchTab('signin')}
-              className={`flex-1 text-sm font-medium py-2 rounded-md transition-all ${
-                tab === 'signin'
-                  ? 'bg-white text-ocean-800 shadow-sm'
-                  : 'text-gray-500 hover:text-gray-700'
-              }`}
+              className="flex items-center gap-1.5 text-sm text-ocean-500 hover:text-ocean-700 font-medium mb-4 transition-colors"
             >
-              {t('auth.signIn')}
+              <ArrowLeft className="w-4 h-4" />
+              {t('auth.backToSignIn')}
             </button>
-            <button
-              onClick={() => switchTab('signup')}
-              className={`flex-1 text-sm font-medium py-2 rounded-md transition-all ${
-                tab === 'signup'
-                  ? 'bg-white text-ocean-800 shadow-sm'
-                  : 'text-gray-500 hover:text-gray-700'
-              }`}
-            >
-              {t('auth.signUp')}
-            </button>
-          </div>
+          )}
 
           <form onSubmit={handleSubmit} className="space-y-4">
             {tab === 'signup' && (
@@ -174,23 +209,37 @@ export default function AuthModal({ isOpen, onClose, defaultTab = 'signin' }: Au
               </div>
             </div>
 
-            <div>
-              <label htmlFor="auth-password" className="block text-sm font-medium text-gray-700 mb-1">{t('auth.password')}</label>
-              <div className="relative">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-                <input
-                  id="auth-password"
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder={t('auth.minChars')}
-                  minLength={6}
-                  className="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-lg text-sm
-                             focus:outline-none focus:ring-2 focus:ring-ocean-300 focus:border-ocean-400 transition-all"
-                  required
-                />
+            {tab !== 'reset' && (
+              <div>
+                <label htmlFor="auth-password" className="block text-sm font-medium text-gray-700 mb-1">{t('auth.password')}</label>
+                <div className="relative">
+                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                  <input
+                    id="auth-password"
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder={t('auth.minChars')}
+                    minLength={6}
+                    className="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-lg text-sm
+                               focus:outline-none focus:ring-2 focus:ring-ocean-300 focus:border-ocean-400 transition-all"
+                    required
+                  />
+                </div>
               </div>
-            </div>
+            )}
+
+            {tab === 'signin' && (
+              <div className="text-right">
+                <button
+                  type="button"
+                  onClick={() => switchTab('reset')}
+                  className="text-sm text-ocean-500 hover:text-ocean-700 font-medium transition-colors"
+                >
+                  {t('auth.forgotPassword')}
+                </button>
+              </div>
+            )}
 
             {error && (
               <div className="bg-red-50 text-red-600 text-sm px-4 py-2.5 rounded-lg">
@@ -211,6 +260,8 @@ export default function AuthModal({ isOpen, onClose, defaultTab = 'signin' }: Au
             >
               {submitting ? (
                 <Loader2 className="w-4 h-4 animate-spin" />
+              ) : tab === 'reset' ? (
+                t('auth.sendResetLink')
               ) : tab === 'signin' ? (
                 t('auth.signIn')
               ) : (

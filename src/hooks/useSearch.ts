@@ -44,6 +44,7 @@ export function useSearch(query: string) {
         supabase
           .from('businesses')
           .select('*, categories(*), areas(*)')
+          .eq('is_placeholder', false)
           .ilike('name', term)
           .limit(8),
       ]);

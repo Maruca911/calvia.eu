@@ -171,9 +171,17 @@ export default function Footer() {
           <p className="text-white text-sm">
             &copy; {new Date().getFullYear()} Calvia<span className="text-sun-500">.app</span>. {t('footer.allRightsReserved')}
           </p>
-          <Link to={l('/privacy')} className="text-white hover:text-sun-400 transition-colors text-sm">
-            {t('footer.privacyPolicy')}
-          </Link>
+          <div className="flex items-center gap-4 flex-wrap justify-center">
+            <Link to={l('/privacy')} className="text-white hover:text-sun-400 transition-colors text-sm">
+              {t('footer.privacyPolicy')}
+            </Link>
+            <Link to={l('/terms')} className="text-white hover:text-sun-400 transition-colors text-sm">
+              {t('footer.termsOfService')}
+            </Link>
+            <Link to={l('/impressum')} className="text-white hover:text-sun-400 transition-colors text-sm">
+              {t('footer.impressum')}
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

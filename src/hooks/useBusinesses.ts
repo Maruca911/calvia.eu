@@ -18,7 +18,8 @@ export function useBusinesses(
       setLoading(true);
       let query = supabase
         .from('businesses')
-        .select('*, categories(*), areas(*)', { count: 'exact' });
+        .select('*, categories(*), areas(*)', { count: 'exact' })
+        .eq('is_placeholder', false);
 
       if (categoryId) query = query.eq('category_id', categoryId);
       if (areaId) query = query.eq('area_id', areaId);
