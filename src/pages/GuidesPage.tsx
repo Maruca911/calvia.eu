@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
+import { usePageMeta } from '../hooks/usePageMeta';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { BookOpen, MapPin, Tag, Calendar, Waves, Mountain, Bike, ChevronRight } from 'lucide-react';
@@ -36,14 +37,7 @@ export default function GuidesPage() {
     icon: SUBCATEGORY_ICONS[id],
   }));
 
-  useEffect(() => {
-    document.title = 'Guides & Tips | Calvia.app - Mallorca Business Directory';
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute('content', 'Local guides, tips, and recommendations for Calvia, Mallorca. Beach guides, hiking trails, cycling routes, restaurant guides, and insider tips.');
-    return () => {
-      document.title = "Calvia.app - The Modern Yellow Pages of Mallorca's Southwest";
-    };
-  }, []);
+  usePageMeta(t('seo.guidesTitle'), t('seo.guidesDesc'));
 
   useEffect(() => {
     const hash = location.hash.replace('#', '');

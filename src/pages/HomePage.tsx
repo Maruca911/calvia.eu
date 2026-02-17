@@ -153,10 +153,10 @@ function HowItWorks() {
   const { t } = useTranslation();
 
   const steps = [
-    { icon: Search, title: t('home.stepSearchTitle'), desc: t('home.stepSearchDesc') },
-    { icon: Compass, title: t('home.stepDiscoverTitle'), desc: t('home.stepDiscoverDesc') },
-    { icon: Shield, title: t('home.stepTrustTitle'), desc: t('home.stepTrustDesc') },
-    { icon: Clock, title: t('home.stepSaveTimeTitle'), desc: t('home.stepSaveTimeDesc') },
+    { icon: Search, title: t('home.stepSearch'), desc: t('home.stepSearchDesc') },
+    { icon: Compass, title: t('home.stepDiscover'), desc: t('home.stepDiscoverDesc') },
+    { icon: Shield, title: t('home.stepTrust'), desc: t('home.stepTrustDesc') },
+    { icon: Clock, title: t('home.stepSaveTime'), desc: t('home.stepSaveTimeDesc') },
   ];
 
   return (
@@ -325,7 +325,7 @@ function ValueProposition() {
             <div>
               <div className="inline-flex items-center gap-2 bg-ocean-50 text-ocean-600 px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Shield className="w-4 h-4" />
-                {t('home.whyCalviaApp')}
+                {t('home.whyCalvia')}
               </div>
               <h2 className="font-display text-3xl lg:text-4xl font-bold text-ocean-800 mb-6">
                 {t('home.trustedGuide')}
@@ -335,10 +335,10 @@ function ValueProposition() {
               </p>
               <div className="space-y-4">
                 {[
-                  t('home.valueProp1'),
-                  t('home.valueProp2'),
-                  t('home.valueProp3'),
-                  t('home.valueProp4'),
+                  t('home.checkVerified'),
+                  t('home.checkCoverage'),
+                  t('home.checkBuiltFor'),
+                  t('home.checkYearRound'),
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
@@ -358,7 +358,7 @@ function ValueProposition() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img
                   src="https://images.pexels.com/photos/2549018/pexels-photo-2549018.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt={t('home.calviaCoastlineAlt')}
+                  alt="Calvia coastline"
                   loading="lazy"
                   className="w-full aspect-[4/3] object-cover"
                 />
@@ -372,7 +372,7 @@ function ValueProposition() {
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-ocean-800">{t('home.trustedPlatform')}</p>
-                    <p className="text-xs text-gray-500">{t('home.trustedPlatformDesc')}</p>
+                    <p className="text-xs text-gray-500">{t('home.trustedCount')}</p>
                   </div>
                 </div>
               </div>
