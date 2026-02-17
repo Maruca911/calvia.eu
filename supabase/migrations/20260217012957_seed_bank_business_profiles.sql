@@ -1,0 +1,47 @@
+/*
+  # Seed Banks & Finance Business Profiles
+
+  1. New Businesses (30 entries)
+    - Category: Banks & Finance (eb1df2f2-15bd-4686-87d4-1097f69017a8)
+    - Includes traditional banks, digital banks, finance/mortgage specialists
+    - Areas mapped across Santa Ponca, Magaluf, Ses Illetes, Calvia Vila, Peguera, Palmanova, Portals Nous
+
+  2. Data Notes
+    - Digital banks (N26, Revolut, Wise, Starling, OpenBank) included with "Digital" addresses
+    - Bank/Finance and Bank/Repo sub-categories kept under Banks & Finance umbrella
+    - App-based contact info preserved for digital banks
+*/
+
+INSERT INTO businesses (name, slug, description, category_id, area_id, phone, website, address, rating, notes, is_placeholder, social_links)
+VALUES
+  ('Banca March', 'banca-march', 'Highest solvency ratio bank with personalised wealth management.', 'eb1df2f2-15bd-4686-87d4-1097f69017a8', 'e770e3e1-c9e3-468d-a024-d65255b48c5c', '+34 971 69 32 00', 'bancamarch.es', 'Av. Rei Jaume I, Santa Ponsa', 5.0, 'HNWI-friendly: Highest solvency ratio; personalized wealth management for retirees.', false, '{}'),
+  ('Deutsche Bank Santa Ponsa', 'deutsche-bank-santa-ponsa', 'Multilingual premium banking for expats in Santa Ponsa.', 'eb1df2f2-15bd-4686-87d4-1097f69017a8', 'e770e3e1-c9e3-468d-a024-d65255b48c5c', '+34 971 69 02 00', 'deutsche-bank.es', 'Carrer Gran Via Puig de Teix, Santa Ponsa', 4.8, 'Multilingual (EN/DE); premium accounts for expats.', false, '{}'),
+  ('Banco Popular Magaluf', 'banco-popular-magaluf', 'Local bank branches with mortgage services in Magaluf.', 'eb1df2f2-15bd-4686-87d4-1097f69017a8', '2a8543a1-49fb-4656-a49f-ec59320b37e5', '+34 971 68 12 00', 'bancopopular.es', 'Av. Notari Alemany, Magaluf', 4.7, 'Local branches; HNWI mortgages.', false, '{}'),
+  ('Banc Sabadell Illetes', 'banc-sabadell-illetes', 'Digital banking with exclusive services for affluent clients.', 'eb1df2f2-15bd-4686-87d4-1097f69017a8', 'f3fa2a2d-fd7d-4bb0-96e7-5384ca1c76c7', '+34 971 40 21 00', 'sabadell.com', 'Passeig Illetes, Illetes', 4.6, 'Digital banking; exclusive for affluent clients.', false, '{}'),
+  ('La Caixa Calvia', 'la-caixa-calvia', 'Wide branch network with sustainable investment options.', 'eb1df2f2-15bd-4686-87d4-1097f69017a8', '5ea18376-376c-4f73-bef6-f5111b745dd4', '+34 971 13 81 00', 'lacaixa.es', 'Carrer Major, Calvià', 4.5, 'Wide network; sustainable investments.', false, '{}'),
+  ('Barclays Bank Santa Ponsa', 'barclays-bank-santa-ponsa', 'British-friendly wealth services in Santa Ponsa.', 'eb1df2f2-15bd-4686-87d4-1097f69017a8', 'e770e3e1-c9e3-468d-a024-d65255b48c5c', '+34 971 23 73 00', 'barclays.es', 'Av. Rei Jaume I, Santa Ponsa', 4.7, 'British-friendly; wealth services.', false, '{}'),
+  ('Banco de Credito Balear', 'banco-de-credito-balear', 'Local banking expertise with loan services in Santa Ponsa.', 'eb1df2f2-15bd-4686-87d4-1097f69017a8', 'e770e3e1-c9e3-468d-a024-d65255b48c5c', '+34 971 69 32 00', 'creditobalear.com', 'Avinguda del Golf, Santa Ponsa', 4.6, 'Local expertise; HNWI loans.', false, '{}'),
+  ('Bankinter Peguera', 'bankinter-peguera', 'No-fee accounts with premium services for visitors.', 'eb1df2f2-15bd-4686-87d4-1097f69017a8', 'aedc2a15-2949-4522-9239-4bbe35580947', '+34 971 68 16 00', 'bankinter.com', 'Boulevard de Peguera, Peguera', 4.5, 'No-fee accounts; premium for tourists.', false, '{}'),
+  ('EVO Banco Magaluf', 'evo-banco-magaluf', 'Digital-first banking designed for expats in Magaluf.', 'eb1df2f2-15bd-4686-87d4-1097f69017a8', '2a8543a1-49fb-4656-a49f-ec59320b37e5', '+34 971 13 08 00', 'evobanco.com', 'Av. Magaluf, Magaluf', 4.7, 'Digital-first; expat-friendly.', false, '{}'),
+  ('ING Palmanova', 'ing-palmanova', 'Fee-free banking with multilingual apps in Palmanova.', 'eb1df2f2-15bd-4686-87d4-1097f69017a8', '611170cd-47c1-4060-a226-fad26428df6a', '+34 971 13 08 00', 'ing.es', 'Passeig Mar, Palmanova', 4.6, 'Fee-free; multilingual apps.', false, '{}'),
+  ('BBVA Magaluf', 'bbva-magaluf', 'Global banking network with mortgage services.', 'eb1df2f2-15bd-4686-87d4-1097f69017a8', '2a8543a1-49fb-4656-a49f-ec59320b37e5', '+34 971 13 08 00', 'bbva.es', 'Av. Magaluf S/N, Magaluf', 4.5, 'Global network; HNWI mortgages.', false, '{}'),
+  ('Santander Santa Ponsa', 'santander-santa-ponsa', 'Wealth management from Spain''s largest bank.', 'eb1df2f2-15bd-4686-87d4-1097f69017a8', 'e770e3e1-c9e3-468d-a024-d65255b48c5c', '+34 971 69 40 00', 'santander.com', 'Carrer Ramon de Moncada, Santa Ponsa', 4.7, 'Largest bank; wealth management.', false, '{}'),
+  ('CaixaBank Illetes', 'caixabank-illetes', 'Local sustainable investment banking near Ses Illetes.', 'eb1df2f2-15bd-4686-87d4-1097f69017a8', 'f3fa2a2d-fd7d-4bb0-96e7-5384ca1c76c7', '+34 971 40 20 00', 'caixabank.es', 'Av. Joan Miro, Illetes', 4.6, 'Local investments; sustainable.', false, '{}'),
+  ('Bankia Magaluf', 'bankia-magaluf', 'Affordable premium banking services in Magaluf.', 'eb1df2f2-15bd-4686-87d4-1097f69017a8', '2a8543a1-49fb-4656-a49f-ec59320b37e5', '+34 971 13 02 00', 'bankia.es', 'Carrer Punta Ballena, Magaluf', 4.5, 'Affordable premiums.', false, '{}'),
+  ('Cecabank', 'cecabank', 'High assets under management with trust services.', 'eb1df2f2-15bd-4686-87d4-1097f69017a8', '5ea18376-376c-4f73-bef6-f5111b745dd4', '+34 971 00 00 00', 'cecabank.es', 'Madrid (branches in Calvià)', 4.7, 'High AUM; HNWI trusts.', false, '{}'),
+  ('BBVA International', 'bbva-international', 'Top assets and expat services from BBVA group.', 'eb1df2f2-15bd-4686-87d4-1097f69017a8', '5ea18376-376c-4f73-bef6-f5111b745dd4', '+34 901 11 22 33', 'bbva.com', 'Madrid (Calvià branches)', 4.6, 'Top assets; expat services.', false, '{}'),
+  ('Lionsgate Capital', 'lionsgate-capital', 'Specialist mortgage services for high-net-worth individuals.', 'eb1df2f2-15bd-4686-87d4-1097f69017a8', '5ea18376-376c-4f73-bef6-f5111b745dd4', '+34 971 00 00 00', 'lionsgatecapital.com', 'Palma (near Calvià)', 4.5, 'Mortgage specialists for HNWIs.', false, '{}'),
+  ('Banco Sabadell Atlantico', 'banco-sabadell-atlantico', 'Premium loan and banking services.', 'eb1df2f2-15bd-4686-87d4-1097f69017a8', '5ea18376-376c-4f73-bef6-f5111b745dd4', '+34 971 00 00 00', 'sabadellatlantico.com', 'Alicante (Calvià)', 4.7, 'Premium loans.', false, '{}'),
+  ('N26', 'n26-digital-bank', 'Fee-free digital banking ideal for expats in Calvia.', 'eb1df2f2-15bd-4686-87d4-1097f69017a8', '5ea18376-376c-4f73-bef6-f5111b745dd4', '', 'n26.com', 'Digital (Calvià access)', 4.6, 'Fee-free for expats.', false, '{}'),
+  ('Revolut', 'revolut-digital-bank', 'Digital banking with multi-currency support for residents.', 'eb1df2f2-15bd-4686-87d4-1097f69017a8', '5ea18376-376c-4f73-bef6-f5111b745dd4', '', 'revolut.com', 'Digital (Calvià)', 4.5, 'Digital banking; multi-currency.', false, '{}'),
+  ('Wise', 'wise-transfers', 'Low-fee international money transfers for residents and visitors.', 'eb1df2f2-15bd-4686-87d4-1097f69017a8', '5ea18376-376c-4f73-bef6-f5111b745dd4', '', 'wise.com', 'Digital', 4.7, 'Low-fee transfers for HNWIs.', false, '{}'),
+  ('Starling Bank', 'starling-bank', 'No-charge ATM withdrawals and digital banking.', 'eb1df2f2-15bd-4686-87d4-1097f69017a8', '5ea18376-376c-4f73-bef6-f5111b745dd4', '', 'starlingbank.com', 'Digital', 4.6, 'No-charge ATMs.', false, '{}'),
+  ('OpenBank', 'openbank', 'Interest savings and digital banking from Santander group.', 'eb1df2f2-15bd-4686-87d4-1097f69017a8', '5ea18376-376c-4f73-bef6-f5111b745dd4', '+34 901 24 72 47', 'openbank.es', 'Santander group', 4.5, 'Interest savings; digital.', false, '{}'),
+  ('Servihabitat', 'servihabitat', 'Bank repossession properties for investors.', 'eb1df2f2-15bd-4686-87d4-1097f69017a8', '5ea18376-376c-4f73-bef6-f5111b745dd4', '+34 971 00 00 00', 'servihabitat.com', 'Palma', 4.7, 'Repossessions for investors.', false, '{}'),
+  ('Imperial Properties', 'imperial-properties-finance', 'Bank bargain properties for high-net-worth individuals.', 'eb1df2f2-15bd-4686-87d4-1097f69017a8', 'e770e3e1-c9e3-468d-a024-d65255b48c5c', '+34 971 69 40 00', 'imperial-properties.com', 'Santa Ponsa', 4.6, 'Bank bargains for HNWIs.', false, '{}'),
+  ('Sandberg Estates', 'sandberg-estates-finance', 'Mortgage connection services in Portals Nous.', 'eb1df2f2-15bd-4686-87d4-1097f69017a8', '90784574-076e-471d-b61a-d18422d0f69f', '+34 971 40 21 00', 'sandberg-estates.com', 'Portals Nous', 4.5, 'Mortgage connections.', false, '{}'),
+  ('Banca March Palma', 'banca-march-palma', 'Solvency leader bank branch in Palma near Calvia.', 'eb1df2f2-15bd-4686-87d4-1097f69017a8', '5ea18376-376c-4f73-bef6-f5111b745dd4', '+34 971 77 91 00', 'bancamarch.es', 'Palma (near Calvià)', 4.7, 'Solvency leader.', false, '{}'),
+  ('Deutsche Bank Palma', 'deutsche-bank-palma', 'International banking for high-net-worth individuals in Palma.', 'eb1df2f2-15bd-4686-87d4-1097f69017a8', '5ea18376-376c-4f73-bef6-f5111b745dd4', '+34 971 22 82 00', 'db.com', 'Palma', 4.6, 'International HNWIs.', false, '{}'),
+  ('Banco Popular Palma', 'banco-popular-palma', 'Local bank branches in Palma serving Calvia residents.', 'eb1df2f2-15bd-4686-87d4-1097f69017a8', '5ea18376-376c-4f73-bef6-f5111b745dd4', '+34 971 72 82 00', 'popular.com', 'Palma', 4.5, 'Local branches.', false, '{}'),
+  ('Banc Sabadell Palma', 'banc-sabadell-palma', 'Premium banking services in Palma.', 'eb1df2f2-15bd-4686-87d4-1097f69017a8', '5ea18376-376c-4f73-bef6-f5111b745dd4', '+34 971 00 00 00', 'sabadell.com', 'Palma', 4.7, 'Premium services.', false, '{}')
+ON CONFLICT (slug) DO NOTHING;

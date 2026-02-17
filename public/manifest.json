@@ -1,0 +1,21 @@
+{
+  "name": "Calvia.app",
+  "short_name": "Calvia",
+  "description": "The Modern Yellow Pages of Mallorca's Southwest",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#014BB5",
+  "icons": [
+    {
+      "src": "/favicon-calvia.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/logo-calvia.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
