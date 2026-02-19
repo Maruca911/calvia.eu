@@ -140,8 +140,8 @@ export default function BusinessFilters({
       </div>
 
       <div className="pt-3 border-t border-gray-100">
-        <p className="text-xs text-gray-400">
-          {resultCount} {resultCount === 1 ? t('filters.businessFound') : t('filters.businessesFound')}
+        <p className="text-xs text-gray-500 font-medium">
+          {resultCount} {resultCount === 1 ? t('filters.verifiedBusinessFound') : t('filters.verifiedBusinessesFound')}
         </p>
       </div>
 

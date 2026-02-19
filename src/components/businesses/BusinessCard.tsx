@@ -118,8 +118,8 @@ export default function BusinessCard({ business }: BusinessCardProps) {
 
         <Link
           to={l(`/profile/${business.slug || business.id}`)}
-          className="mt-3 pt-3 border-t border-gray-100 flex items-center gap-1 text-xs font-medium
-                     text-ocean-500 hover:text-sun-500 transition-colors"
+          className="mt-3 pt-3 border-t border-gray-100 flex items-center justify-between gap-1 text-xs font-semibold
+                     text-white bg-ocean-500 hover:bg-ocean-600 transition-colors px-3 py-2 rounded-lg"
         >
           {t('businesses.viewProfile')} <ArrowRight className="w-3 h-3" />
         </Link>
