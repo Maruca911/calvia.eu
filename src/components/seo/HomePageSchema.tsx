@@ -4,13 +4,13 @@ export default function HomePageSchema() {
     '@type': 'WebSite',
     name: 'Calvia.app',
     alternateName: 'Calvia App - Mallorca Business Directory',
-    url: 'https://calvia.app',
+    url: 'https://calvia.eu',
     description: "The Modern Yellow Pages of Mallorca's Southwest. Find trusted local businesses across 23 villages in Calvia.",
     potentialAction: {
       '@type': 'SearchAction',
       target: {
         '@type': 'EntryPoint',
-        urlTemplate: 'https://calvia.app/businesses?q={search_term_string}',
+        urlTemplate: 'https://calvia.eu/businesses?q={search_term_string}',
       },
       'query-input': 'required name=search_term_string',
     },
@@ -20,7 +20,7 @@ export default function HomePageSchema() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Calvia.app',
-    url: 'https://calvia.app',
+    url: 'https://calvia.eu',
     description: 'Local business directory and community platform for Calvia, Mallorca.',
     areaServed: {
       '@type': 'City',

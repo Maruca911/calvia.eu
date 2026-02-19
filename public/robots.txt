@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://calvia.app/sitemap.xml
+Sitemap: https://calvia.eu/sitemap.xml

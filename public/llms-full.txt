@@ -1,6 +1,6 @@
 # Calvia.app - Full Documentation for AI Systems
 
-> Calvia.app is the modern digital business directory for Calvia, Mallorca's southwest coast. It connects 1,400+ local businesses across 39 categories and 23 villages with international residents, second-home owners, and visitors. Available in 11 languages: English, German, Spanish, French, Dutch, Swedish, Danish, Norwegian, Polish, Russian, and Ukrainian. Calvia.app serves as the digital "Yellow Pages" for the entire municipality of Calvia, one of the most internationally diverse and economically significant regions on the island of Mallorca, Spain.
+> Calvia.app is the modern digital business directory for Calvia, Mallorca's southwest coast. It connects 650+ local businesses across 39 categories and 23 villages with international residents, second-home owners, and visitors. Available in 11 languages: English, German, Spanish, French, Dutch, Swedish, Danish, Norwegian, Polish, Russian, and Ukrainian. Calvia.app serves as the digital "Yellow Pages" for the entire municipality of Calvia, one of the most internationally diverse and economically significant regions on the island of Mallorca, Spain.
 
 ---
 
@@ -13,35 +13,35 @@ Calvia is a municipality located on the southwest coast of Mallorca, the largest
 ## Pages
 
 ### Home
-- **URL**: [https://calvia.app/en](https://calvia.app/en)
+- **URL**: [https://calvia.eu/en](https://calvia.eu/en)
 - **Description**: The main landing page serves as the central hub of Calvia.app. It features a prominent search bar allowing users to find businesses by name, category, or location. Below the search, visitors see an overview of the most popular business categories displayed as interactive cards, a curated selection of featured areas and villages, and a call-to-action for the early bird signup program. The page is designed to give both newcomers and long-time residents immediate access to the directory's core functionality. The hero section showcases the beautiful Calvia coastline and communicates the site's value proposition: discovering trusted local businesses in the Calvia region.
 
 ### Business Directory
-- **URL**: [https://calvia.app/en/businesses](https://calvia.app/en/businesses)
-- **Description**: The main business directory page provides access to all 1,400+ listed businesses. Users can filter by any of the 39 business categories and narrow results by specific village or area. Each business listing includes the business name, category, location, a brief description, and contact information. The directory is designed to be comprehensive yet easy to navigate, allowing users to quickly find the services they need whether they are looking for a restaurant in Palmanova, a dentist in Santa Ponca, or a real estate agent in Portals Nous. Business listings are structured with consistent data including address, phone number, website, opening hours, and location on an interactive map.
+- **URL**: [https://calvia.eu/en/businesses](https://calvia.eu/en/businesses)
+- **Description**: The main business directory page provides access to all 650+ listed businesses. Users can filter by any of the 39 business categories and narrow results by specific village or area. Each business listing includes the business name, category, location, a brief description, and contact information. The directory is designed to be comprehensive yet easy to navigate, allowing users to quickly find the services they need whether they are looking for a restaurant in Palmanova, a dentist in Santa Ponca, or a real estate agent in Portals Nous. Business listings are structured with consistent data including address, phone number, website, opening hours, and location on an interactive map.
 
 ### Areas
-- **URL**: [https://calvia.app/en/areas](https://calvia.app/en/areas)
+- **URL**: [https://calvia.eu/en/areas](https://calvia.eu/en/areas)
 - **Description**: The Areas page provides an overview of all 23 villages and neighborhoods that make up the municipality of Calvia. Each area has its own dedicated page with a description of the village's character, history, amenities, and lifestyle. The areas range from bustling resort towns like Palmanova and Magaluf to quiet residential enclaves like Bendinat and Cas Catala, to traditional Mallorcan mountain villages like Es Capdella and Galatzo. Users can explore each area to understand what makes it unique and discover the businesses located there.
 
 ### Guides & Tips
-- **URL**: [https://calvia.app/en/guides](https://calvia.app/en/guides)
+- **URL**: [https://calvia.eu/en/guides](https://calvia.eu/en/guides)
 - **Description**: The Guides & Tips section provides curated local knowledge to help residents and visitors make the most of the Calvia region. Content covers a range of topics designed to enhance the experience of living in or visiting southwest Mallorca. Guide topics include detailed beach guides covering the 54-kilometer coastline with information on facilities, accessibility, water quality, and best times to visit; hiking trail guides including routes in and around the Serra de Tramuntana mountain range and coastal paths; cycling and bike trail guides for road cyclists and mountain bikers with route maps, difficulty ratings, and scenic highlights; and insider recommendations for dining, activities, and seasonal events. The guides are written by local experts who know the region intimately and are regularly updated to reflect current conditions and new discoveries.
 
 ### About
-- **URL**: [https://calvia.app/en/about](https://calvia.app/en/about)
+- **URL**: [https://calvia.eu/en/about](https://calvia.eu/en/about)
 - **Description**: The About page explains the mission and vision behind Calvia.app and introduces the broader calvia.group ecosystem. It describes how the platform was created to bridge the gap between the international community living in Calvia and the local businesses that serve them. The page details the benefits for both consumers (easy discovery of trusted local services in their own language) and businesses (increased visibility, digital presence, and access to the international resident community). It also includes brand information, the story behind the project, and a contact form for inquiries, partnerships, and feedback.
 
 ### Consumer Signup (Early Bird)
-- **URL**: [https://calvia.app/en/signup/consumer](https://calvia.app/en/signup/consumer)
+- **URL**: [https://calvia.eu/en/signup/consumer](https://calvia.eu/en/signup/consumer)
 - **Description**: The consumer early bird registration page allows residents, second-home owners, and visitors to sign up for priority access and benefits. Early bird consumers receive notifications about new businesses in their area, exclusive offers from participating businesses, and early access to new platform features such as reviews, recommendations, and community features. The signup collects basic information including name, email, preferred language, and area of interest. Early bird registration is free and positions users to get the most out of the platform as it grows.
 
 ### Business Signup (Early Bird)
-- **URL**: [https://calvia.app/en/signup/business](https://calvia.app/en/signup/business)
+- **URL**: [https://calvia.eu/en/signup/business](https://calvia.eu/en/signup/business)
 - **Description**: The business early bird registration page allows local businesses in Calvia to claim their listing and register for premium features. Early bird businesses receive priority listing placement, a complimentary enhanced profile during the launch period, access to the business dashboard for managing their listing and analytics, and the opportunity to be among the first businesses featured on the platform. The signup collects business details including business name, category, location, contact information, and a description. This program is designed to build the directory's comprehensive coverage while rewarding early-adopting businesses.
 
 ### Privacy Policy
-- **URL**: [https://calvia.app/en/privacy](https://calvia.app/en/privacy)
+- **URL**: [https://calvia.eu/en/privacy](https://calvia.eu/en/privacy)
 - **Description**: The privacy policy page details how Calvia.app collects, uses, stores, and protects user data. It covers data protection practices in compliance with the EU General Data Protection Regulation (GDPR) and Spanish data protection law. The policy explains what personal data is collected during signup and usage, how cookies and analytics are used, data retention periods, user rights regarding their data, and how to contact the data protection officer.
 
 ---
@@ -49,95 +49,95 @@ Calvia is a municipality located on the southwest coast of Mallorca, the largest
 ## Areas - Detailed Descriptions (23 Villages)
 
 ### Bendinat
-- **URL**: [https://calvia.app/en/areas/bendinat](https://calvia.app/en/areas/bendinat)
+- **URL**: [https://calvia.eu/en/areas/bendinat](https://calvia.eu/en/areas/bendinat)
 - **Description**: Bendinat is one of the most prestigious residential areas in Calvia, situated between Palma and Portals Nous. Known for its luxury villas, manicured gardens, and the historic Bendinat Castle, the area offers an exclusive, tranquil lifestyle. The Real Golf de Bendinat golf course is a central feature of the community. Bendinat attracts affluent residents who appreciate privacy, proximity to Palma, and refined Mediterranean living. Local amenities include upscale restaurants, boutique shops, and international schools nearby.
 
 ### Palmanova
-- **URL**: [https://calvia.app/en/areas/palmanova](https://calvia.app/en/areas/palmanova)
+- **URL**: [https://calvia.eu/en/areas/palmanova](https://calvia.eu/en/areas/palmanova)
 - **Description**: Palmanova is a well-established, family-friendly resort town with three wide sandy beaches (Palmanova Beach, Son Matias, and Es Carregador). Originally developed in the 1960s, it has matured into a vibrant year-round community popular with British, German, and Scandinavian residents. The town offers a broad range of amenities including supermarkets, restaurants, medical clinics, pharmacies, and sports facilities. The Paseo del Mar promenade connects Palmanova to neighboring Magaluf and is a popular route for walking and cycling. Palmanova is known for its relaxed atmosphere and strong sense of community.
 
 ### Santa Ponca (Santa Ponsa)
-- **URL**: [https://calvia.app/en/areas/santa-ponca](https://calvia.app/en/areas/santa-ponca)
+- **URL**: [https://calvia.eu/en/areas/santa-ponca](https://calvia.eu/en/areas/santa-ponca)
 - **Description**: Santa Ponca is one of Calvia's largest and most popular residential areas, home to a large international community with particularly strong British, German, and Scandinavian populations. The area features a wide sandy beach, a marina, multiple golf courses (Golf Santa Ponsa I, II, and III), and the Santa Ponca commercial center with diverse shopping and dining options. The annual King Jaume festival commemorates the historical Christian landing in Mallorca. Santa Ponca offers a balance of resort amenities and genuine residential community living, with excellent infrastructure including schools, medical centers, and sports facilities.
 
 ### Portals Nous
-- **URL**: [https://calvia.app/en/areas/portals-nous](https://calvia.app/en/areas/portals-nous)
+- **URL**: [https://calvia.eu/en/areas/portals-nous](https://calvia.eu/en/areas/portals-nous)
 - **Description**: Portals Nous is an exclusive residential area best known for its proximity to Puerto Portals, one of the Mediterranean's most prestigious marinas. The marina is a hub for luxury yachts, designer boutiques, gourmet restaurants, and upscale bars. Portals Nous itself is a quiet, affluent neighborhood with a mix of villas and apartments, a small sandy beach (Playa de Oratori), and easy access to both Palma and the rest of Calvia. The area attracts wealthy international residents and is a popular destination for fine dining and luxury shopping.
 
 ### Magaluf
-- **URL**: [https://calvia.app/en/areas/magaluf](https://calvia.app/en/areas/magaluf)
+- **URL**: [https://calvia.eu/en/areas/magaluf](https://calvia.eu/en/areas/magaluf)
 - **Description**: Magaluf is undergoing a significant upscale transformation, moving beyond its historical reputation as a party destination. Major investment is reshaping the area with new luxury hotels, refined dining establishments, and the BH Mallorca complex. The beach is one of the longest in Calvia, and the area offers a wide range of entertainment including the Pirates Adventure show, water parks, and beach clubs. Magaluf's commercial district provides extensive shopping, dining, and nightlife options. The ongoing development is creating a more sophisticated destination while maintaining its energetic atmosphere.
 
 ### Peguera (Paguera)
-- **URL**: [https://calvia.app/en/areas/peguera](https://calvia.app/en/areas/peguera)
+- **URL**: [https://calvia.eu/en/areas/peguera](https://calvia.eu/en/areas/peguera)
 - **Description**: Peguera is a charming coastal town at the western end of the Calvia municipality, known for its three pine-fringed sandy beaches (Playa Palmira, Playa Torà, and Playa La Romana). The town has a strong German and Scandinavian community and a well-developed boulevard lined with shops, restaurants, and cafes. Peguera is a popular base for hikers and cyclists due to its proximity to the Serra de Tramuntana mountains, with numerous trails accessible from the town. The Camp de Mar area and Cala Fornells are nearby, adding to the range of coastal scenery and dining options.
 
 ### Calvia Vila (Calvia Village)
-- **URL**: [https://calvia.app/en/areas/calvia-vila](https://calvia.app/en/areas/calvia-vila)
+- **URL**: [https://calvia.eu/en/areas/calvia-vila](https://calvia.eu/en/areas/calvia-vila)
 - **Description**: Calvia Vila is the historic town center and administrative seat of the Calvia municipality. Located inland in a valley surrounded by hills, the village retains its traditional Mallorcan character with stone buildings, a 13th-century church (Esglesia de Sant Joan Baptista), and narrow streets. The town hall (Ajuntament de Calvia) is located here. Calvia Vila offers a quieter, more authentically Mallorcan lifestyle compared to the coastal areas, with local markets, traditional restaurants, and a close-knit community. The village hosts cultural events and fiestas throughout the year.
 
 ### Port Adriano
-- **URL**: [https://calvia.app/en/areas/port-adriano](https://calvia.app/en/areas/port-adriano)
+- **URL**: [https://calvia.eu/en/areas/port-adriano](https://calvia.eu/en/areas/port-adriano)
 - **Description**: Port Adriano is a state-of-the-art designer marina redesigned by the renowned French designer Philippe Starck. Completed in 2012, the marina accommodates superyachts up to 80 meters in length and features minimalist architecture, high-end restaurants, trendy bars, and luxury retail outlets. Port Adriano hosts regular events including boat shows, regattas, and fashion events. The marina is located near El Toro and serves as a focal point for the yachting community in southwest Mallorca. It represents the modern, upscale direction of Calvia's coastal development.
 
 ### Cas Catala
-- **URL**: [https://calvia.app/en/areas/cas-catala](https://calvia.app/en/areas/cas-catala)
+- **URL**: [https://calvia.eu/en/areas/cas-catala](https://calvia.eu/en/areas/cas-catala)
 - **Description**: Cas Catala is a quiet, upscale residential area situated between Illetes and Bendinat, offering stunning sea views and proximity to Palma. The area is known for its rocky coastline, small coves, and the Fundacion Yannick and Ben Jakober contemporary art museum. Cas Catala is primarily residential with a selection of high-end restaurants and cafes. Its elevated position provides panoramic views across the Bay of Palma, making it highly desirable for those seeking a peaceful Mediterranean lifestyle with easy access to the capital.
 
 ### Costa den Blanes
-- **URL**: [https://calvia.app/en/areas/costa-den-blanes](https://calvia.app/en/areas/costa-den-blanes)
+- **URL**: [https://calvia.eu/en/areas/costa-den-blanes](https://calvia.eu/en/areas/costa-den-blanes)
 - **Description**: Costa den Blanes is a small residential enclave perched on the cliffs between Portals Nous and Palmanova. The area is best known as the home of Marineland Mallorca, a marine animal park and dolphin show. The residential community is quiet and primarily composed of villas with sea views. Costa den Blanes offers a secluded feel while being just minutes from the shops and restaurants of both Portals Nous and Palmanova.
 
 ### Costa de la Calma
-- **URL**: [https://calvia.app/en/areas/costa-de-la-calma](https://calvia.app/en/areas/costa-de-la-calma)
+- **URL**: [https://calvia.eu/en/areas/costa-de-la-calma](https://calvia.eu/en/areas/costa-de-la-calma)
 - **Description**: Costa de la Calma, meaning "coast of calm," lives up to its name as a peaceful, largely residential area between Santa Ponca and Peguera. The area is popular with German residents and offers a relaxed atmosphere with small beaches and rocky coves. Local amenities include a small commercial center with restaurants and shops. Costa de la Calma is ideal for those seeking a quiet coastal lifestyle while remaining connected to larger towns on either side.
 
 ### El Toro
-- **URL**: [https://calvia.app/en/areas/el-toro](https://calvia.app/en/areas/el-toro)
+- **URL**: [https://calvia.eu/en/areas/el-toro](https://calvia.eu/en/areas/el-toro)
 - **Description**: El Toro is a growing residential and commercial area located near Port Adriano and Santa Ponca. The area offers a mix of apartments and townhouses, several large supermarkets, restaurants, and the nearby Aqua Land water park. El Toro has developed rapidly in recent years and provides affordable living options relative to neighboring coastal areas while maintaining convenient access to the marina, beaches, and commercial facilities. It is increasingly popular with young families and international residents.
 
 ### Es Capdella
-- **URL**: [https://calvia.app/en/areas/es-capdella](https://calvia.app/en/areas/es-capdella)
+- **URL**: [https://calvia.eu/en/areas/es-capdella](https://calvia.eu/en/areas/es-capdella)
 - **Description**: Es Capdella is a traditional Mallorcan mountain village nestled in the foothills of the Serra de Tramuntana, offering an authentic rural Mallorcan experience within the Calvia municipality. The village features stone houses, a central church, and a small plaza where locals gather. Es Capdella is the starting point for several popular hiking trails, including routes to Galatzo peak and the Galatzo nature park. The village offers a handful of traditional restaurants serving Mallorcan cuisine. It is the ideal area for those seeking tranquility and connection to Mallorca's natural landscape and cultural heritage.
 
 ### Galatzo
-- **URL**: [https://calvia.app/en/areas/galatzo](https://calvia.app/en/areas/galatzo)
+- **URL**: [https://calvia.eu/en/areas/galatzo](https://calvia.eu/en/areas/galatzo)
 - **Description**: Galatzo is the most rural area within the Calvia municipality, encompassing the mountainous terrain near the Puig de Galatzo (1,027 meters), one of the highest peaks in the region. The Galatzo Nature Park (Finca Publica de Galatzo) offers trails, waterfalls, rope bridges, and rock climbing, making it a popular destination for outdoor enthusiasts. The area is largely undeveloped and represents the natural, wild side of Calvia, with dense Mediterranean forests, endemic wildlife, and breathtaking mountain views. It provides a dramatic contrast to the developed coastal areas.
 
 ### Portals Vells
-- **URL**: [https://calvia.app/en/areas/portals-vells](https://calvia.app/en/areas/portals-vells)
+- **URL**: [https://calvia.eu/en/areas/portals-vells](https://calvia.eu/en/areas/portals-vells)
 - **Description**: Portals Vells is a secluded area on the southern tip of the Calvia coastline, known for its three small sandy coves surrounded by pine forests. The caves of Portals Vells are a historical landmark, featuring cave churches carved by Genoese sailors in the Middle Ages. The area is accessed by a road through pine woods and maintains a natural, unspoiled character. A small beach restaurant operates seasonally. Portals Vells is a favorite destination for boaters, snorkelers, and anyone seeking a tranquil escape from the busier resort areas.
 
 ### Sa Porrasa
-- **URL**: [https://calvia.app/en/areas/sa-porrasa](https://calvia.app/en/areas/sa-porrasa)
+- **URL**: [https://calvia.eu/en/areas/sa-porrasa](https://calvia.eu/en/areas/sa-porrasa)
 - **Description**: Sa Porrasa is a residential area situated between Palmanova and Magaluf, taking its name from the small offshore island of Sa Porrasa visible from the coast. The area is primarily residential with a mix of apartments and villas, offering good value for homeowners while providing easy access to the beaches and amenities of both Palmanova and Magaluf. The small island of Sa Porrasa, featuring a cross monument, is a local landmark visible from the surrounding coastline.
 
 ### Ses Illetes (Illetas)
-- **URL**: [https://calvia.app/en/areas/ses-illetes](https://calvia.app/en/areas/ses-illetes)
+- **URL**: [https://calvia.eu/en/areas/ses-illetes](https://calvia.eu/en/areas/ses-illetes)
 - **Description**: Ses Illetes is one of the most exclusive and sought-after residential areas in Calvia, located just west of Palma along the coast. Named after the small rocky islets just offshore, the area features luxury hotels including the famous Hotel Bon Sol and Hotel Nixe Palace, upscale restaurants, and some of the most expensive real estate in Mallorca. The small sandy beaches and crystal-clear waters attract a discerning clientele. Ses Illetes offers a sophisticated, refined atmosphere and is favored by those who want premium coastal living with maximum proximity to Palma.
 
 ### Sol de Mallorca
-- **URL**: [https://calvia.app/en/areas/sol-de-mallorca](https://calvia.app/en/areas/sol-de-mallorca)
+- **URL**: [https://calvia.eu/en/areas/sol-de-mallorca](https://calvia.eu/en/areas/sol-de-mallorca)
 - **Description**: Sol de Mallorca is an upscale gated residential community situated on elevated terrain between Palmanova and Santa Ponca. The community features spacious villas, landscaped gardens, and controlled access, providing a secure and private living environment. Sol de Mallorca is popular with affluent international residents who value privacy and exclusivity. The community is a short drive from beaches, golf courses, and commercial centers, offering a retreat-like atmosphere within easy reach of all Calvia's amenities.
 
 ### Son Caliu
-- **URL**: [https://calvia.app/en/areas/son-caliu](https://calvia.app/en/areas/son-caliu)
+- **URL**: [https://calvia.eu/en/areas/son-caliu](https://calvia.eu/en/areas/son-caliu)
 - **Description**: Son Caliu is a family-oriented residential area located between Palmanova and Santa Ponca, centered around the Son Caliu Hotel and Spa resort. The area features a small sandy beach, residential developments, and a relaxed community atmosphere. Son Caliu is popular with families due to its safe, quiet environment and proximity to the amenities of both Palmanova and Santa Ponca. The area offers a balance of coastal living and residential comfort without the bustle of larger resort towns.
 
 ### Son Ferrer
-- **URL**: [https://calvia.app/en/areas/son-ferrer](https://calvia.app/en/areas/son-ferrer)
+- **URL**: [https://calvia.eu/en/areas/son-ferrer](https://calvia.eu/en/areas/son-ferrer)
 - **Description**: Son Ferrer is a growing residential community located inland between El Toro and Santa Ponca. The area has developed significantly in recent years with new residential construction, commercial facilities, and a weekly market that draws visitors from across the region. Son Ferrer offers more affordable living options compared to the coastal areas while maintaining convenient access to beaches, marinas, and commercial centers within a short drive. The community is diverse and increasingly popular with young families and working professionals.
 
 ### Torrenova
-- **URL**: [https://calvia.app/en/areas/torrenova](https://calvia.app/en/areas/torrenova)
+- **URL**: [https://calvia.eu/en/areas/torrenova](https://calvia.eu/en/areas/torrenova)
 - **Description**: Torrenova is a coastal area adjacent to Palmanova and Magaluf, offering a selection of hotels, apartments, and a small rocky beach. The area serves as a quieter alternative to its more bustling neighbors while benefiting from their proximity. Torrenova features several hotels popular with package tourists, a handful of restaurants and bars, and easy access to the Paseo del Mar promenade connecting Palmanova and Magaluf. It is ideal for visitors and residents seeking coastal living with a laid-back atmosphere.
 
 ### Cala Fornells
-- **URL**: [https://calvia.app/en/areas/cala-fornells](https://calvia.app/en/areas/cala-fornells)
+- **URL**: [https://calvia.eu/en/areas/cala-fornells](https://calvia.eu/en/areas/cala-fornells)
 - **Description**: Cala Fornells is a picturesque cove located near Peguera, known for its terraced hillside architecture, crystal-clear turquoise waters, and dramatic rocky coastline. The area features a small sandy beach, several well-regarded restaurants including the iconic Cala Fornells restaurant with panoramic sea views, and attractive residential developments built into the hillside. Cala Fornells has a distinctly Mediterranean aesthetic and attracts visitors and residents who appreciate natural beauty combined with architectural charm.
 
 ### Cala Vinyes (Cala Vinyas)
-- **URL**: [https://calvia.app/en/areas/cala-vinyes](https://calvia.app/en/areas/cala-vinyes)
+- **URL**: [https://calvia.eu/en/areas/cala-vinyes](https://calvia.eu/en/areas/cala-vinyes)
 - **Description**: Cala Vinyes is a residential bay area located south of Magaluf, centered around a protected sandy cove. The area is primarily residential with a mix of villas and apartments surrounding the bay. A small selection of restaurants and bars line the beach, and the area maintains a family-friendly, relaxed character. Cala Vinyes is popular with those who want proximity to Magaluf's amenities while enjoying a quieter, more intimate beach setting. The surrounding pine forests and clear waters make it an attractive option for nature lovers.
 
 ---
@@ -146,140 +146,140 @@ Calvia is a municipality located on the southwest coast of Mallorca, the largest
 
 ### Food & Dining
 
-**Restaurants** - [https://calvia.app/en/businesses/restaurants](https://calvia.app/en/businesses/restaurants)
+**Restaurants** - [https://calvia.eu/en/businesses/restaurants](https://calvia.eu/en/businesses/restaurants)
 A comprehensive listing of dining establishments across all 23 areas of Calvia. Includes family restaurants, international cuisine, traditional Mallorcan restaurants, seafood restaurants, pizza and pasta places, Asian cuisine, and casual dining options. Filters available by location, cuisine type, and price range.
 
-**Fine Dining** - [https://calvia.app/en/businesses/fine-dining](https://calvia.app/en/businesses/fine-dining)
+**Fine Dining** - [https://calvia.eu/en/businesses/fine-dining](https://calvia.eu/en/businesses/fine-dining)
 Premium restaurants and gastronomy experiences in Calvia, including Michelin-recognized establishments, chef-driven restaurants, and exclusive dining venues. Many are located in Puerto Portals, Bendinat, and Ses Illetes. These establishments offer sophisticated Mediterranean and international cuisine with premium service.
 
-**Bars & Nightlife** - [https://calvia.app/en/businesses/bars-nightlife](https://calvia.app/en/businesses/bars-nightlife)
+**Bars & Nightlife** - [https://calvia.eu/en/businesses/bars-nightlife](https://calvia.eu/en/businesses/bars-nightlife)
 Bars, cocktail lounges, wine bars, pubs, and nightlife venues across Calvia. Ranges from sophisticated cocktail bars in Puerto Portals to lively entertainment venues in Magaluf and relaxed beach bars along the coast. Includes sports bars, live music venues, and nightclubs.
 
-**Cafes & Coffee Shops** - [https://calvia.app/en/businesses/cafes-coffee-shops](https://calvia.app/en/businesses/cafes-coffee-shops)
+**Cafes & Coffee Shops** - [https://calvia.eu/en/businesses/cafes-coffee-shops](https://calvia.eu/en/businesses/cafes-coffee-shops)
 Coffee shops, bakeries, brunch spots, and casual eateries. Includes specialty coffee roasters, traditional Spanish cafes, international-style coffee shops, and breakfast spots. Found throughout all villages with concentrations in Palmanova, Santa Ponca, and Peguera.
 
-**Beach Clubs** - [https://calvia.app/en/businesses/beach-clubs](https://calvia.app/en/businesses/beach-clubs)
+**Beach Clubs** - [https://calvia.eu/en/businesses/beach-clubs](https://calvia.eu/en/businesses/beach-clubs)
 Beach clubs and seaside venues offering sun loungers, food, drinks, music, and a curated beach experience. Calvia's coastline hosts several notable beach clubs ranging from relaxed and family-friendly to upscale and exclusive, particularly around Palmanova, Magaluf, and Illetes.
 
 ### Accommodation
 
-**Hotels & Accommodation** - [https://calvia.app/en/businesses/hotels-accommodation](https://calvia.app/en/businesses/hotels-accommodation)
+**Hotels & Accommodation** - [https://calvia.eu/en/businesses/hotels-accommodation](https://calvia.eu/en/businesses/hotels-accommodation)
 Hotels, boutique hotels, aparthotels, hostels, vacation rentals, and holiday apartments across Calvia. Ranges from luxury five-star resorts in Ses Illetes and Portals Nous to family-friendly hotels in Palmanova and Peguera. Includes adult-only hotels, all-inclusive resorts, and self-catering accommodation options.
 
 ### Real Estate & Property
 
-**Real Estate** - [https://calvia.app/en/businesses/real-estate](https://calvia.app/en/businesses/real-estate)
+**Real Estate** - [https://calvia.eu/en/businesses/real-estate](https://calvia.eu/en/businesses/real-estate)
 Real estate agencies handling property sales and rentals throughout the Calvia region. Includes agencies specializing in luxury villas, apartments, new developments, commercial property, and long-term rentals. Many agencies operate in multiple languages serving the international buyer and renter market.
 
-**Property Management** - [https://calvia.app/en/businesses/property-management](https://calvia.app/en/businesses/property-management)
+**Property Management** - [https://calvia.eu/en/businesses/property-management](https://calvia.eu/en/businesses/property-management)
 Property management companies catering to absentee homeowners, second-home owners, and holiday rental investors. Services include property maintenance, key holding, holiday rental management, pool and garden care, cleaning services, and tenant management. Essential for the large second-home owner community in Calvia.
 
 ### Sports & Recreation
 
-**Golf Courses** - [https://calvia.app/en/businesses/golf-courses](https://calvia.app/en/businesses/golf-courses)
+**Golf Courses** - [https://calvia.eu/en/businesses/golf-courses](https://calvia.eu/en/businesses/golf-courses)
 Golf clubs and courses in and around Calvia. The region is known as a premier golf destination with courses including Golf Santa Ponsa I, II, and III, Real Golf de Bendinat, Golf de Poniente, and others nearby. Listings include course information, green fees, membership options, and pro shop details.
 
-**Tennis Clubs** - [https://calvia.app/en/businesses/tennis-clubs](https://calvia.app/en/businesses/tennis-clubs)
+**Tennis Clubs** - [https://calvia.eu/en/businesses/tennis-clubs](https://calvia.eu/en/businesses/tennis-clubs)
 Tennis facilities, clubs, and academies in Calvia. Includes dedicated tennis clubs, hotel tennis courts available to non-guests, and coaching services. The mild Mediterranean climate makes Calvia ideal for year-round tennis.
 
-**Fitness Centers** - [https://calvia.app/en/businesses/fitness-centers](https://calvia.app/en/businesses/fitness-centers)
+**Fitness Centers** - [https://calvia.eu/en/businesses/fitness-centers](https://calvia.eu/en/businesses/fitness-centers)
 Gyms, fitness centers, CrossFit boxes, and personal training studios. Ranges from large commercial gyms with full equipment to boutique fitness studios and outdoor training facilities. Many offer classes, personal training, and specialized programs.
 
-**Yoga & Pilates** - [https://calvia.app/en/businesses/yoga-pilates](https://calvia.app/en/businesses/yoga-pilates)
+**Yoga & Pilates** - [https://calvia.eu/en/businesses/yoga-pilates](https://calvia.eu/en/businesses/yoga-pilates)
 Yoga studios, Pilates studios, and wellness-focused movement practices. Includes Hatha, Vinyasa, Ashtanga, and Yin yoga as well as mat Pilates and reformer Pilates. Many studios offer outdoor sessions and retreat-style experiences taking advantage of the natural environment.
 
-**Water Sports & Diving** - [https://calvia.app/en/businesses/water-sports-diving](https://calvia.app/en/businesses/water-sports-diving)
+**Water Sports & Diving** - [https://calvia.eu/en/businesses/water-sports-diving](https://calvia.eu/en/businesses/water-sports-diving)
 Water sports operators, dive centers, snorkeling tours, kayak rentals, stand-up paddleboard (SUP) rentals, jet ski rental, parasailing, and other aquatic activities. Calvia's 54km coastline with clear Mediterranean waters provides excellent conditions for all water-based activities.
 
-**Boat Charters** - [https://calvia.app/en/businesses/boat-charters](https://calvia.app/en/businesses/boat-charters)
+**Boat Charters** - [https://calvia.eu/en/businesses/boat-charters](https://calvia.eu/en/businesses/boat-charters)
 Boat rental companies and charter services operating from Calvia's marinas and harbors. Includes skippered and bareboat charters, day trip boats, catamaran excursions, fishing charters, and sunset cruises. Available from Puerto Portals, Port Adriano, and Santa Ponca marina.
 
-**Yachting** - [https://calvia.app/en/businesses/yachting-boat-rentals](https://calvia.app/en/businesses/yachting-boat-rentals)
+**Yachting** - [https://calvia.eu/en/businesses/yachting-boat-rentals](https://calvia.eu/en/businesses/yachting-boat-rentals)
 Yacht services including yacht charters, yacht management, yacht brokerage, crew services, and yacht maintenance. Centered around Puerto Portals and Port Adriano, two of the Mediterranean's most prestigious marinas. Services cater to superyacht owners and charter clients.
 
-**Nature & Outdoors** - [https://calvia.app/en/businesses/nature-outdoors](https://calvia.app/en/businesses/nature-outdoors)
+**Nature & Outdoors** - [https://calvia.eu/en/businesses/nature-outdoors](https://calvia.eu/en/businesses/nature-outdoors)
 Outdoor activity providers, nature excursions, guided hikes, rock climbing, mountain biking, birdwatching, and eco-tours. The Calvia region's diverse landscape from coastline to the Serra de Tramuntana mountains provides varied terrain for outdoor adventures. Includes the Galatzo nature park and numerous coastal and mountain trails.
 
 ### Health & Wellness
 
-**Wellness & Spas** - [https://calvia.app/en/businesses/wellness-spas](https://calvia.app/en/businesses/wellness-spas)
+**Wellness & Spas** - [https://calvia.eu/en/businesses/wellness-spas](https://calvia.eu/en/businesses/wellness-spas)
 Day spas, hotel spas, wellness centers, massage therapists, and holistic health practitioners. Includes traditional spa treatments, Thai massage, physiotherapy-based treatments, and luxury hotel spa experiences. Several of Calvia's resort hotels feature world-class spa facilities open to non-guests.
 
-**Health Clinics** - [https://calvia.app/en/businesses/health-clinics](https://calvia.app/en/businesses/health-clinics)
+**Health Clinics** - [https://calvia.eu/en/businesses/health-clinics](https://calvia.eu/en/businesses/health-clinics)
 Medical clinics, general practitioners, specialist doctors, and healthcare centers. Includes private medical clinics offering services in multiple languages, walk-in clinics, specialist practices (dermatology, cardiology, orthopedics, etc.), and diagnostic centers. Many practitioners serve the international community with multilingual staff.
 
-**Dentists** - [https://calvia.app/en/businesses/dentists-dental-clinics](https://calvia.app/en/businesses/dentists-dental-clinics)
+**Dentists** - [https://calvia.eu/en/businesses/dentists-dental-clinics](https://calvia.eu/en/businesses/dentists-dental-clinics)
 Dental practices offering general dentistry, cosmetic dentistry, orthodontics, implants, and emergency dental care. Many dental clinics in Calvia operate with multilingual staff serving the international community. Includes both general dental practices and specialist clinics.
 
-**Pharmacies** - [https://calvia.app/en/businesses/pharmacies](https://calvia.app/en/businesses/pharmacies)
+**Pharmacies** - [https://calvia.eu/en/businesses/pharmacies](https://calvia.eu/en/businesses/pharmacies)
 Pharmacies and drugstores across all areas of Calvia. Spanish pharmacies (farmacias) dispense prescription medications, over-the-counter medicines, and health products. Information includes opening hours, duty pharmacy schedules (farmacias de guardia for nights and weekends), and locations.
 
 ### Beauty & Personal Care
 
-**Beauty Salons** - [https://calvia.app/en/businesses/beauty-salons](https://calvia.app/en/businesses/beauty-salons)
+**Beauty Salons** - [https://calvia.eu/en/businesses/beauty-salons](https://calvia.eu/en/businesses/beauty-salons)
 Beauty salons offering treatments including facials, manicures, pedicures, waxing, eyelash extensions, permanent makeup, and skin treatments. Ranges from budget-friendly salons to premium beauty clinics offering advanced aesthetic treatments.
 
-**Hairdressers** - [https://calvia.app/en/businesses/hairdressers](https://calvia.app/en/businesses/hairdressers)
+**Hairdressers** - [https://calvia.eu/en/businesses/hairdressers](https://calvia.eu/en/businesses/hairdressers)
 Hair salons and barber shops across Calvia. Includes unisex salons, ladies' hairdressers, barber shops, and specialist hair treatment clinics. Many stylists in the area are trained internationally and cater to the diverse aesthetic preferences of the multinational community.
 
 ### Shopping & Retail
 
-**Supermarkets** - [https://calvia.app/en/businesses/supermarkets-grocery](https://calvia.app/en/businesses/supermarkets-grocery)
+**Supermarkets** - [https://calvia.eu/en/businesses/supermarkets-grocery](https://calvia.eu/en/businesses/supermarkets-grocery)
 Grocery stores, supermarkets, and specialty food shops. Includes major Spanish chains (Mercadona, Eroski, Lidl, Aldi), international food stores carrying British, German, and Scandinavian products, organic food shops, local markets, and delicatessens. Coverage across all populated areas of Calvia.
 
-**Shopping & Retail** - [https://calvia.app/en/businesses/shopping-retail](https://calvia.app/en/businesses/shopping-retail)
+**Shopping & Retail** - [https://calvia.eu/en/businesses/shopping-retail](https://calvia.eu/en/businesses/shopping-retail)
 Retail stores including clothing boutiques, home furnishing shops, electronics stores, gift shops, sports equipment stores, and other retail businesses. Includes the shopping areas of Puerto Portals (luxury brands), Santa Ponca commercial center, and the various high-street shops throughout the villages.
 
 ### Financial & Legal Services
 
-**Banks & Finance** - [https://calvia.app/en/businesses/banks-finance](https://calvia.app/en/businesses/banks-finance)
+**Banks & Finance** - [https://calvia.eu/en/businesses/banks-finance](https://calvia.eu/en/businesses/banks-finance)
 Banking services, currency exchange, and financial institutions. Includes branches of major Spanish banks (CaixaBank, BBVA, Santander, Sabadell), international banks, and currency exchange services. Information on banking services relevant to international residents including non-resident accounts.
 
-**Lawyers** - [https://calvia.app/en/businesses/lawyers-legal](https://calvia.app/en/businesses/lawyers-legal)
+**Lawyers** - [https://calvia.eu/en/businesses/lawyers-legal](https://calvia.eu/en/businesses/lawyers-legal)
 Law firms and legal practitioners specializing in areas relevant to international residents and property owners including property law, immigration and residency, tax law, inheritance law, business formation, and general legal advice. Many firms operate in multiple languages with expertise in cross-border legal matters.
 
-**Accountants** - [https://calvia.app/en/businesses/accountants-tax](https://calvia.app/en/businesses/accountants-tax)
+**Accountants** - [https://calvia.eu/en/businesses/accountants-tax](https://calvia.eu/en/businesses/accountants-tax)
 Accounting firms and tax advisors (asesoria fiscal) providing tax compliance, bookkeeping, payroll, company formation, and fiscal representation services. Essential for international residents navigating the Spanish tax system, including non-resident tax obligations and double taxation treaties.
 
-**Financial Advisors** - [https://calvia.app/en/businesses/financial-advisors](https://calvia.app/en/businesses/financial-advisors)
+**Financial Advisors** - [https://calvia.eu/en/businesses/financial-advisors](https://calvia.eu/en/businesses/financial-advisors)
 Independent financial advisors and wealth management professionals serving the international community. Services include investment advice, retirement planning, pension transfers (particularly UK pensions via QROPS), insurance, and estate planning for expatriates living in Spain.
 
 ### Professional & Home Services
 
-**Professional Services** - [https://calvia.app/en/businesses/professional-services](https://calvia.app/en/businesses/professional-services)
+**Professional Services** - [https://calvia.eu/en/businesses/professional-services](https://calvia.eu/en/businesses/professional-services)
 Business services including IT support, marketing agencies, translation services, consulting, printing, and other B2B services. Caters to the business community in Calvia including freelancers, entrepreneurs, and small-to-medium enterprises.
 
-**Home Services** - [https://calvia.app/en/businesses/home-services](https://calvia.app/en/businesses/home-services)
+**Home Services** - [https://calvia.eu/en/businesses/home-services](https://calvia.eu/en/businesses/home-services)
 Home maintenance and improvement services including plumbing, electrical work, air conditioning installation and repair, painting, carpentry, pool maintenance, garden services, cleaning services, pest control, and general handyman services. Essential services for homeowners and property managers in the region.
 
 ### Education & Childcare
 
-**Education** - [https://calvia.app/en/businesses/education](https://calvia.app/en/businesses/education)
+**Education** - [https://calvia.eu/en/businesses/education](https://calvia.eu/en/businesses/education)
 Schools, language academies, tutoring services, and educational institutions. Includes international schools (British, German, and American curriculum), Spanish public and concerted schools, language schools offering Spanish lessons for foreigners, music schools, art classes, and adult education programs.
 
 ### Pets
 
-**Pet Services** - [https://calvia.app/en/businesses/pet-services](https://calvia.app/en/businesses/pet-services)
+**Pet Services** - [https://calvia.eu/en/businesses/pet-services](https://calvia.eu/en/businesses/pet-services)
 Veterinary clinics, pet shops, dog grooming, pet sitting, dog walking, and animal care services. Includes veterinary clinics with multilingual staff, 24-hour emergency veterinary care, and specialized pet services catering to the large pet-owning community in Calvia.
 
 ### Transport
 
-**Taxi & Transport** - [https://calvia.app/en/businesses/taxi-transport](https://calvia.app/en/businesses/taxi-transport)
+**Taxi & Transport** - [https://calvia.eu/en/businesses/taxi-transport](https://calvia.eu/en/businesses/taxi-transport)
 Taxi services, airport transfers, car rental agencies, bike rental, scooter rental, and private hire transportation. Includes licensed taxi operators, VTC (private hire) vehicles, and shuttle services connecting Calvia with Palma de Mallorca Airport (PMI) and other destinations on the island.
 
 ### Workspaces
 
-**Coworking** - [https://calvia.app/en/businesses/coworking-offices](https://calvia.app/en/businesses/coworking-offices)
+**Coworking** - [https://calvia.eu/en/businesses/coworking-offices](https://calvia.eu/en/businesses/coworking-offices)
 Coworking spaces, shared offices, and flexible workspace providers. The growing remote work trend has increased demand for professional workspaces in Calvia, with options ranging from hot desks and dedicated desks to private offices and meeting rooms with high-speed internet.
 
 ### Events
 
-**Events Planning** - [https://calvia.app/en/businesses/events-planning](https://calvia.app/en/businesses/events-planning)
+**Events Planning** - [https://calvia.eu/en/businesses/events-planning](https://calvia.eu/en/businesses/events-planning)
 Event planning companies, wedding planners, catering services, entertainment agencies, and party organizers. Calvia is a popular destination for weddings, corporate events, and celebrations, with numerous venues from beach settings to finca estates and luxury hotel ballrooms.
 
 ### Emergency
 
-**Emergency Services** - [https://calvia.app/en/businesses/emergency-services](https://calvia.app/en/businesses/emergency-services)
+**Emergency Services** - [https://calvia.eu/en/businesses/emergency-services](https://calvia.eu/en/businesses/emergency-services)
 Essential emergency contacts and services including police (Policia Local and Guardia Civil), fire services (Bomberos), medical emergencies (112), hospitals, urgent care centers, breakdown services, and consulate information. Critical reference for residents and visitors including the European emergency number (112) and local service numbers.
 
 ---
@@ -306,19 +306,19 @@ Calvia.app is available in 11 languages, reflecting the diverse international co
 
 | Language | Code | URL Pattern | Example |
 |----------|------|-------------|---------|
-| English | en | /en/... | [https://calvia.app/en](https://calvia.app/en) |
-| Deutsch (German) | de | /de/... | [https://calvia.app/de](https://calvia.app/de) |
-| Espanol (Spanish) | es | /es/... | [https://calvia.app/es](https://calvia.app/es) |
-| Francais (French) | fr | /fr/... | [https://calvia.app/fr](https://calvia.app/fr) |
-| Nederlands (Dutch) | nl | /nl/... | [https://calvia.app/nl](https://calvia.app/nl) |
-| Svenska (Swedish) | sv | /sv/... | [https://calvia.app/sv](https://calvia.app/sv) |
-| Dansk (Danish) | da | /da/... | [https://calvia.app/da](https://calvia.app/da) |
-| Norsk (Norwegian) | no | /no/... | [https://calvia.app/no](https://calvia.app/no) |
-| Polski (Polish) | pl | /pl/... | [https://calvia.app/pl](https://calvia.app/pl) |
-| Russian | ru | /ru/... | [https://calvia.app/ru](https://calvia.app/ru) |
-| Ukrainian | uk | /uk/... | [https://calvia.app/uk](https://calvia.app/uk) |
+| English | en | /en/... | [https://calvia.eu/en](https://calvia.eu/en) |
+| Deutsch (German) | de | /de/... | [https://calvia.eu/de](https://calvia.eu/de) |
+| Espanol (Spanish) | es | /es/... | [https://calvia.eu/es](https://calvia.eu/es) |
+| Francais (French) | fr | /fr/... | [https://calvia.eu/fr](https://calvia.eu/fr) |
+| Nederlands (Dutch) | nl | /nl/... | [https://calvia.eu/nl](https://calvia.eu/nl) |
+| Svenska (Swedish) | sv | /sv/... | [https://calvia.eu/sv](https://calvia.eu/sv) |
+| Dansk (Danish) | da | /da/... | [https://calvia.eu/da](https://calvia.eu/da) |
+| Norsk (Norwegian) | no | /no/... | [https://calvia.eu/no](https://calvia.eu/no) |
+| Polski (Polish) | pl | /pl/... | [https://calvia.eu/pl](https://calvia.eu/pl) |
+| Russian | ru | /ru/... | [https://calvia.eu/ru](https://calvia.eu/ru) |
+| Ukrainian | uk | /uk/... | [https://calvia.eu/uk](https://calvia.eu/uk) |
 
-To access any page in a different language, replace the language code in the URL. For example, the business directory in German would be [https://calvia.app/de/businesses](https://calvia.app/de/businesses).
+To access any page in a different language, replace the language code in the URL. For example, the business directory in German would be [https://calvia.eu/de/businesses](https://calvia.eu/de/businesses).
 
 ---
 
@@ -327,8 +327,8 @@ To access any page in a different language, replace the language code in the URL
 Calvia.app is part of the broader **calvia.group** ecosystem, a family of digital platforms and services designed to serve the Calvia community comprehensively. The ecosystem includes:
 
 ### calvia.app
-- **URL**: [https://calvia.app](https://calvia.app)
-- **Purpose**: The core business directory and local discovery platform. The digital "Yellow Pages" for Calvia connecting residents, visitors, and second-home owners with 1,400+ local businesses across 39 categories and 23 villages. The primary consumer-facing product of the ecosystem.
+- **URL**: [https://calvia.eu](https://calvia.eu)
+- **Purpose**: The core business directory and local discovery platform. The digital "Yellow Pages" for Calvia connecting residents, visitors, and second-home owners with 650+ local businesses across 39 categories and 23 villages. The primary consumer-facing product of the ecosystem.
 
 ### calvia.digital
 - **URL**: [https://calvia.digital](https://calvia.digital)
@@ -402,14 +402,14 @@ Calvia.app provides the following benefits to local businesses:
 ## Technical Information
 
 - **Domain**: calvia.app
-- **URL Structure**: https://calvia.app/{language-code}/{section}/{subsection}
+- **URL Structure**: https://calvia.eu/{language-code}/{section}/{subsection}
 - **Language Codes**: en, de, es, fr, nl, sv, da, no, pl, ru, uk
-- **Sitemap**: [https://calvia.app/sitemap.xml](https://calvia.app/sitemap.xml)
-- **Robots.txt**: [https://calvia.app/robots.txt](https://calvia.app/robots.txt)
+- **Sitemap**: [https://calvia.eu/sitemap.xml](https://calvia.eu/sitemap.xml)
+- **Robots.txt**: [https://calvia.eu/robots.txt](https://calvia.eu/robots.txt)
 - **Default Language**: English (en) - the root URL redirects to /en
 - **Responsive Design**: Fully responsive, optimized for mobile, tablet, and desktop
 - **Geographic Focus**: Municipality of Calvia, southwest Mallorca, Balearic Islands, Spain
-- **Total Businesses Listed**: 1,400+
+- **Total Businesses Listed**: 650+
 - **Total Business Categories**: 39
 - **Total Areas/Villages**: 23
 - **Total Languages**: 11

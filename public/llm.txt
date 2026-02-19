@@ -1,0 +1,14 @@
+Calvia.app on calvia.eu
+The modern yellow pages for Mallorca's southwest.
+
+Primary URLs
+- https://calvia.eu/en
+- https://calvia.eu/en/businesses
+- https://calvia.eu/en/areas
+- https://calvia.eu/en/guides
+
+Machine-readable resources
+- https://calvia.eu/sitemap.xml
+- https://calvia.eu/robots.txt
+- https://calvia.eu/llms.txt
+- https://calvia.eu/llms-full.txt

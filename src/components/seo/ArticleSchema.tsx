@@ -16,16 +16,16 @@ export default function ArticleSchema({ guide }: Props) {
     author: {
       '@type': 'Organization',
       name: 'Calvia.app',
-      url: 'https://calvia.app',
+      url: 'https://calvia.eu',
     },
     publisher: {
       '@type': 'Organization',
       name: 'Calvia.app',
-      url: 'https://calvia.app',
+      url: 'https://calvia.eu',
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://calvia.app/en/guides/${guide.slug}`,
+      '@id': `https://calvia.eu/en/guides/${guide.slug}`,
     },
   };
 

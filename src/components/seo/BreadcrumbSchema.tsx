@@ -7,7 +7,7 @@ interface Props {
   crumbs: Crumb[];
 }
 
-const BASE_URL = 'https://calvia.app';
+const BASE_URL = 'https://calvia.eu';
 
 export default function BreadcrumbSchema({ crumbs }: Props) {
   const schema = {

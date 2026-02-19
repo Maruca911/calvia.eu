@@ -1,94 +1,94 @@
 # Calvia.app
 
-> Calvia.app is the modern digital business directory for Calvia, Mallorca's southwest coast. It connects 1,400+ local businesses across 39 categories and 23 villages with international residents, second-home owners, and visitors. Available in 11 languages: English, German, Spanish, French, Dutch, Swedish, Danish, Norwegian, Polish, Russian, and Ukrainian.
+> Calvia.app is the modern digital business directory for Calvia, Mallorca's southwest coast. It connects 650+ local businesses across 39 categories and 23 villages with international residents, second-home owners, and visitors. Available in 11 languages: English, German, Spanish, French, Dutch, Swedish, Danish, Norwegian, Polish, Russian, and Ukrainian.
 
 ## Pages
 
-- [Home](https://calvia.app/en): Main landing page with search, categories, areas overview, and early bird signup
-- [Business Directory](https://calvia.app/en/businesses): Browse 1,400+ businesses across 39 categories with filters by category and location
-- [Areas](https://calvia.app/en/areas): Explore 23 villages and neighborhoods in Calvia including Palmanova, Santa Ponca, Portals Nous, Magaluf, and more
-- [Guides & Tips](https://calvia.app/en/guides): Local guides covering beaches, hiking trails, bike trails, and insider recommendations
-- [About](https://calvia.app/en/about): About the calvia.group ecosystem, benefits for users and businesses, brand information, and contact form
-- [Consumer Signup](https://calvia.app/en/signup/consumer): Early bird registration for residents and visitors
-- [Business Signup](https://calvia.app/en/signup/business): Early bird registration for local businesses
-- [Privacy Policy](https://calvia.app/en/privacy): Data protection and privacy information
+- [Home](https://calvia.eu/en): Main landing page with search, categories, areas overview, and early bird signup
+- [Business Directory](https://calvia.eu/en/businesses): Browse 650+ businesses across 39 categories with filters by category and location
+- [Areas](https://calvia.eu/en/areas): Explore 23 villages and neighborhoods in Calvia including Palmanova, Santa Ponca, Portals Nous, Magaluf, and more
+- [Guides & Tips](https://calvia.eu/en/guides): Local guides covering beaches, hiking trails, bike trails, and insider recommendations
+- [About](https://calvia.eu/en/about): About the calvia.group ecosystem, benefits for users and businesses, brand information, and contact form
+- [Consumer Signup](https://calvia.eu/en/signup/consumer): Early bird registration for residents and visitors
+- [Business Signup](https://calvia.eu/en/signup/business): Early bird registration for local businesses
+- [Privacy Policy](https://calvia.eu/en/privacy): Data protection and privacy information
 
 ## Areas (23 Villages)
 
-- [Bendinat](https://calvia.app/en/areas/bendinat): Upscale residential area with luxury villas
-- [Palmanova](https://calvia.app/en/areas/palmanova): Family-friendly resort town with sandy beaches
-- [Santa Ponca](https://calvia.app/en/areas/santa-ponca): Popular area with large international community
-- [Portals Nous](https://calvia.app/en/areas/portals-nous): Exclusive area near Puerto Portals marina
-- [Magaluf](https://calvia.app/en/areas/magaluf): Entertainment hub undergoing upscale transformation
-- [Peguera](https://calvia.app/en/areas/peguera): Charming coastal town with pine-fringed beaches
-- [Calvia Vila](https://calvia.app/en/areas/calvia-vila): Historic town center and municipal seat
-- [Port Adriano](https://calvia.app/en/areas/port-adriano): Designer marina by Philippe Starck
-- [Cas Catala](https://calvia.app/en/areas/cas-catala): Quiet residential area with sea views
-- [Costa den Blanes](https://calvia.app/en/areas/costa-den-blanes): Residential enclave near Marineland
-- [Costa de la Calma](https://calvia.app/en/areas/costa-de-la-calma): Peaceful coastal residential area
-- [El Toro](https://calvia.app/en/areas/el-toro): Growing area near Port Adriano
-- [Es Capdella](https://calvia.app/en/areas/es-capdella): Traditional Mallorcan mountain village
-- [Galatzo](https://calvia.app/en/areas/galatzo): Rural area near Serra de Tramuntana
-- [Portals Vells](https://calvia.app/en/areas/portals-vells): Secluded cove area with natural beauty
-- [Sa Porrasa](https://calvia.app/en/areas/sa-porrasa): Residential area between Palmanova and Magaluf
-- [Ses Illetes](https://calvia.app/en/areas/ses-illetes): Exclusive beachfront area
-- [Sol de Mallorca](https://calvia.app/en/areas/sol-de-mallorca): Upscale gated community
-- [Son Caliu](https://calvia.app/en/areas/son-caliu): Family-oriented residential area
-- [Son Ferrer](https://calvia.app/en/areas/son-ferrer): Growing residential community
-- [Torrenova](https://calvia.app/en/areas/torrenova): Coastal area adjacent to Palmanova
-- [Cala Fornells](https://calvia.app/en/areas/cala-fornells): Picturesque cove near Peguera
-- [Cala Vinyes](https://calvia.app/en/areas/cala-vinyes): Residential bay area
+- [Bendinat](https://calvia.eu/en/areas/bendinat): Upscale residential area with luxury villas
+- [Palmanova](https://calvia.eu/en/areas/palmanova): Family-friendly resort town with sandy beaches
+- [Santa Ponca](https://calvia.eu/en/areas/santa-ponca): Popular area with large international community
+- [Portals Nous](https://calvia.eu/en/areas/portals-nous): Exclusive area near Puerto Portals marina
+- [Magaluf](https://calvia.eu/en/areas/magaluf): Entertainment hub undergoing upscale transformation
+- [Peguera](https://calvia.eu/en/areas/peguera): Charming coastal town with pine-fringed beaches
+- [Calvia Vila](https://calvia.eu/en/areas/calvia-vila): Historic town center and municipal seat
+- [Port Adriano](https://calvia.eu/en/areas/port-adriano): Designer marina by Philippe Starck
+- [Cas Catala](https://calvia.eu/en/areas/cas-catala): Quiet residential area with sea views
+- [Costa den Blanes](https://calvia.eu/en/areas/costa-den-blanes): Residential enclave near Marineland
+- [Costa de la Calma](https://calvia.eu/en/areas/costa-de-la-calma): Peaceful coastal residential area
+- [El Toro](https://calvia.eu/en/areas/el-toro): Growing area near Port Adriano
+- [Es Capdella](https://calvia.eu/en/areas/es-capdella): Traditional Mallorcan mountain village
+- [Galatzo](https://calvia.eu/en/areas/galatzo): Rural area near Serra de Tramuntana
+- [Portals Vells](https://calvia.eu/en/areas/portals-vells): Secluded cove area with natural beauty
+- [Sa Porrasa](https://calvia.eu/en/areas/sa-porrasa): Residential area between Palmanova and Magaluf
+- [Ses Illetes](https://calvia.eu/en/areas/ses-illetes): Exclusive beachfront area
+- [Sol de Mallorca](https://calvia.eu/en/areas/sol-de-mallorca): Upscale gated community
+- [Son Caliu](https://calvia.eu/en/areas/son-caliu): Family-oriented residential area
+- [Son Ferrer](https://calvia.eu/en/areas/son-ferrer): Growing residential community
+- [Torrenova](https://calvia.eu/en/areas/torrenova): Coastal area adjacent to Palmanova
+- [Cala Fornells](https://calvia.eu/en/areas/cala-fornells): Picturesque cove near Peguera
+- [Cala Vinyes](https://calvia.eu/en/areas/cala-vinyes): Residential bay area
 
 ## Business Categories
 
-- [Restaurants](https://calvia.app/en/businesses/restaurants): Dining establishments across Calvia
-- [Fine Dining](https://calvia.app/en/businesses/fine-dining): Premium restaurants and gastronomy
-- [Bars & Nightlife](https://calvia.app/en/businesses/bars-nightlife): Bars, lounges, and nightlife venues
-- [Cafes & Coffee Shops](https://calvia.app/en/businesses/cafes-coffee-shops): Coffee shops and casual eateries
-- [Beach Clubs](https://calvia.app/en/businesses/beach-clubs): Beach clubs and seaside venues
-- [Hotels & Accommodation](https://calvia.app/en/businesses/hotels-accommodation): Hotels, hostels, and vacation rentals
-- [Real Estate](https://calvia.app/en/businesses/real-estate): Property sales and rentals
-- [Golf Courses](https://calvia.app/en/businesses/golf-courses): Golf clubs and courses
-- [Tennis Clubs](https://calvia.app/en/businesses/tennis-clubs): Tennis facilities
-- [Wellness & Spas](https://calvia.app/en/businesses/wellness-spas): Spa and wellness centers
-- [Health Clinics](https://calvia.app/en/businesses/health-clinics): Medical clinics and healthcare
-- [Dentists](https://calvia.app/en/businesses/dentists-dental-clinics): Dental practices
-- [Pharmacies](https://calvia.app/en/businesses/pharmacies): Pharmacies and drugstores
-- [Beauty Salons](https://calvia.app/en/businesses/beauty-salons): Hair and beauty services
-- [Hairdressers](https://calvia.app/en/businesses/hairdressers): Hair salons
-- [Fitness Centers](https://calvia.app/en/businesses/fitness-centers): Gyms and fitness
-- [Yoga & Pilates](https://calvia.app/en/businesses/yoga-pilates): Yoga and Pilates studios
-- [Water Sports & Diving](https://calvia.app/en/businesses/water-sports-diving): Water activities
-- [Boat Charters](https://calvia.app/en/businesses/boat-charters): Boat rentals and charters
-- [Yachting](https://calvia.app/en/businesses/yachting-boat-rentals): Yacht services
-- [Supermarkets](https://calvia.app/en/businesses/supermarkets-grocery): Grocery stores
-- [Shopping & Retail](https://calvia.app/en/businesses/shopping-retail): Retail stores
-- [Banks & Finance](https://calvia.app/en/businesses/banks-finance): Banking services
-- [Lawyers](https://calvia.app/en/businesses/lawyers-legal): Legal services
-- [Accountants](https://calvia.app/en/businesses/accountants-tax): Tax and accounting
-- [Financial Advisors](https://calvia.app/en/businesses/financial-advisors): Financial planning
-- [Professional Services](https://calvia.app/en/businesses/professional-services): Business services
-- [Home Services](https://calvia.app/en/businesses/home-services): Home maintenance
-- [Property Management](https://calvia.app/en/businesses/property-management): Property management
-- [Education](https://calvia.app/en/businesses/education): Schools and learning
-- [Pet Services](https://calvia.app/en/businesses/pet-services): Pet care
-- [Taxi & Transport](https://calvia.app/en/businesses/taxi-transport): Transportation
-- [Coworking](https://calvia.app/en/businesses/coworking-offices): Coworking spaces
-- [Events Planning](https://calvia.app/en/businesses/events-planning): Event services
-- [Nature & Outdoors](https://calvia.app/en/businesses/nature-outdoors): Outdoor activities
-- [Emergency Services](https://calvia.app/en/businesses/emergency-services): Emergency contacts
+- [Restaurants](https://calvia.eu/en/businesses/restaurants): Dining establishments across Calvia
+- [Fine Dining](https://calvia.eu/en/businesses/fine-dining): Premium restaurants and gastronomy
+- [Bars & Nightlife](https://calvia.eu/en/businesses/bars-nightlife): Bars, lounges, and nightlife venues
+- [Cafes & Coffee Shops](https://calvia.eu/en/businesses/cafes-coffee-shops): Coffee shops and casual eateries
+- [Beach Clubs](https://calvia.eu/en/businesses/beach-clubs): Beach clubs and seaside venues
+- [Hotels & Accommodation](https://calvia.eu/en/businesses/hotels-accommodation): Hotels, hostels, and vacation rentals
+- [Real Estate](https://calvia.eu/en/businesses/real-estate): Property sales and rentals
+- [Golf Courses](https://calvia.eu/en/businesses/golf-courses): Golf clubs and courses
+- [Tennis Clubs](https://calvia.eu/en/businesses/tennis-clubs): Tennis facilities
+- [Wellness & Spas](https://calvia.eu/en/businesses/wellness-spas): Spa and wellness centers
+- [Health Clinics](https://calvia.eu/en/businesses/health-clinics): Medical clinics and healthcare
+- [Dentists](https://calvia.eu/en/businesses/dentists-dental-clinics): Dental practices
+- [Pharmacies](https://calvia.eu/en/businesses/pharmacies): Pharmacies and drugstores
+- [Beauty Salons](https://calvia.eu/en/businesses/beauty-salons): Hair and beauty services
+- [Hairdressers](https://calvia.eu/en/businesses/hairdressers): Hair salons
+- [Fitness Centers](https://calvia.eu/en/businesses/fitness-centers): Gyms and fitness
+- [Yoga & Pilates](https://calvia.eu/en/businesses/yoga-pilates): Yoga and Pilates studios
+- [Water Sports & Diving](https://calvia.eu/en/businesses/water-sports-diving): Water activities
+- [Boat Charters](https://calvia.eu/en/businesses/boat-charters): Boat rentals and charters
+- [Yachting](https://calvia.eu/en/businesses/yachting-boat-rentals): Yacht services
+- [Supermarkets](https://calvia.eu/en/businesses/supermarkets-grocery): Grocery stores
+- [Shopping & Retail](https://calvia.eu/en/businesses/shopping-retail): Retail stores
+- [Banks & Finance](https://calvia.eu/en/businesses/banks-finance): Banking services
+- [Lawyers](https://calvia.eu/en/businesses/lawyers-legal): Legal services
+- [Accountants](https://calvia.eu/en/businesses/accountants-tax): Tax and accounting
+- [Financial Advisors](https://calvia.eu/en/businesses/financial-advisors): Financial planning
+- [Professional Services](https://calvia.eu/en/businesses/professional-services): Business services
+- [Home Services](https://calvia.eu/en/businesses/home-services): Home maintenance
+- [Property Management](https://calvia.eu/en/businesses/property-management): Property management
+- [Education](https://calvia.eu/en/businesses/education): Schools and learning
+- [Pet Services](https://calvia.eu/en/businesses/pet-services): Pet care
+- [Taxi & Transport](https://calvia.eu/en/businesses/taxi-transport): Transportation
+- [Coworking](https://calvia.eu/en/businesses/coworking-offices): Coworking spaces
+- [Events Planning](https://calvia.eu/en/businesses/events-planning): Event services
+- [Nature & Outdoors](https://calvia.eu/en/businesses/nature-outdoors): Outdoor activities
+- [Emergency Services](https://calvia.eu/en/businesses/emergency-services): Emergency contacts
 
 ## Languages
 
 Available in 11 languages with URL structure /{lang}/path:
-- [English](https://calvia.app/en) (en)
-- [Deutsch](https://calvia.app/de) (de)
-- [Espanol](https://calvia.app/es) (es)
-- [Francais](https://calvia.app/fr) (fr)
-- [Nederlands](https://calvia.app/nl) (nl)
-- [Svenska](https://calvia.app/sv) (sv)
-- [Dansk](https://calvia.app/da) (da)
-- [Norsk](https://calvia.app/no) (no)
-- [Polski](https://calvia.app/pl) (pl)
-- [Russian](https://calvia.app/ru) (ru)
-- [Ukrainian](https://calvia.app/uk) (uk)
+- [English](https://calvia.eu/en) (en)
+- [Deutsch](https://calvia.eu/de) (de)
+- [Espanol](https://calvia.eu/es) (es)
+- [Francais](https://calvia.eu/fr) (fr)
+- [Nederlands](https://calvia.eu/nl) (nl)
+- [Svenska](https://calvia.eu/sv) (sv)
+- [Dansk](https://calvia.eu/da) (da)
+- [Norsk](https://calvia.eu/no) (no)
+- [Polski](https://calvia.eu/pl) (pl)
+- [Russian](https://calvia.eu/ru) (ru)
+- [Ukrainian](https://calvia.eu/uk) (uk)

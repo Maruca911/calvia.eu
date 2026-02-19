@@ -68,7 +68,7 @@ export default function BusinessProfileSchema({ business }: Props) {
     isPartOf: {
       '@type': 'WebSite',
       name: 'Calvia.app',
-      url: 'https://calvia.app',
+      url: 'https://calvia.eu',
     },
   };
 

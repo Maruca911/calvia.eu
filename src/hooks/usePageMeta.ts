@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { useLanguage } from './useLanguage';
 import { SUPPORTED_LANGUAGES, OG_LOCALE_MAP, type SupportedLanguage } from '../i18n/languages';
 
-const BASE_URL = 'https://calvia.app';
+const BASE_URL = 'https://calvia.eu';
 const DEFAULT_TITLE = "Calvia.app - The Modern Yellow Pages of Mallorca's Southwest";
 
 export function usePageMeta(title: string, description: string) {
