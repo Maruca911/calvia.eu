@@ -15,18 +15,28 @@ export function useBusiness(slug: string | undefined) {
 
     async function load() {
       setLoading(true);
-      const { data } = await supabase
+      const { data: bySlug } = await supabase
         .from('businesses')
         .select('*, categories(*), areas(*)')
         .eq('slug', slug)
         .maybeSingle();
 
-      setBusiness(data);
+      let business = bySlug;
+      if (!business) {
+        const { data: byId } = await supabase
+          .from('businesses')
+          .select('*, categories(*), areas(*)')
+          .eq('id', slug)
+          .maybeSingle();
+        business = byId;
+      }
+
+      setBusiness(business);
       setLoading(false);
 
-      if (data && viewTracked.current !== data.id) {
-        viewTracked.current = data.id;
-        supabase.rpc('increment_view_count', { business_uuid: data.id });
+      if (business && viewTracked.current !== business.id) {
+        viewTracked.current = business.id;
+        supabase.rpc('increment_view_count', { business_uuid: business.id });
       }
     }
     load();

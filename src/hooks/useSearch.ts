@@ -65,58 +65,63 @@ export function useSearch(query: string) {
 
     setLoading(true);
     timeoutRef.current = setTimeout(async () => {
-      const term = `%${normalized}%`;
+      try {
+        const term = `%${normalized}%`;
 
-      const [catRes, areaRes] = await Promise.all([
-        supabase
-          .from('categories')
-          .select('*')
-          .ilike('name', term)
-          .limit(8),
-        supabase
-          .from('areas')
-          .select('*')
-          .ilike('name', term)
-          .limit(8),
-      ]);
+        const [catRes, areaRes] = await Promise.all([
+          supabase
+            .from('categories')
+            .select('*')
+            .ilike('name', term)
+            .limit(8),
+          supabase
+            .from('areas')
+            .select('*')
+            .ilike('name', term)
+            .limit(8),
+        ]);
 
-      const matchingCategoryIds = new Set((catRes.data || []).map((cat) => cat.id));
-      const matchingAreaIds = new Set((areaRes.data || []).map((area) => area.id));
-      const filters = [
-        `name.ilike.${term}`,
-        `description.ilike.${term}`,
-        `address.ilike.${term}`,
-      ];
-      if (matchingCategoryIds.size > 0) {
-        filters.push(`category_id.in.(${Array.from(matchingCategoryIds).join(',')})`);
+        const matchingCategoryIds = new Set((catRes.data || []).map((cat) => cat.id));
+        const matchingAreaIds = new Set((areaRes.data || []).map((area) => area.id));
+        const filters = [
+          `name.ilike.${term}`,
+          `description.ilike.${term}`,
+          `address.ilike.${term}`,
+        ];
+        if (matchingCategoryIds.size > 0) {
+          filters.push(`category_id.in.(${Array.from(matchingCategoryIds).join(',')})`);
+        }
+        if (matchingAreaIds.size > 0) {
+          filters.push(`area_id.in.(${Array.from(matchingAreaIds).join(',')})`);
+        }
+
+        const { data: businessRows } = await supabase
+          .from('businesses')
+          .select('*, categories(*), areas(*)')
+          .eq('is_placeholder', false)
+          .or(filters.join(','))
+          .limit(60);
+
+        const rankedBusinesses = (businessRows || [])
+          .map((business) => ({
+            business,
+            score: scoreBusiness(business as Business, normalized, matchingCategoryIds, matchingAreaIds),
+          }))
+          .filter((entry) => entry.score > 0)
+          .sort((a, b) => b.score - a.score)
+          .slice(0, 20)
+          .map((entry) => entry.business as Business);
+
+        setResults({
+          categories: catRes.data || [],
+          areas: areaRes.data || [],
+          businesses: rankedBusinesses,
+        });
+      } catch {
+        setResults({ categories: [], areas: [], businesses: [] });
+      } finally {
+        setLoading(false);
       }
-      if (matchingAreaIds.size > 0) {
-        filters.push(`area_id.in.(${Array.from(matchingAreaIds).join(',')})`);
-      }
-
-      const { data: businessRows } = await supabase
-        .from('businesses')
-        .select('*, categories(*), areas(*)')
-        .eq('is_placeholder', false)
-        .or(filters.join(','))
-        .limit(60);
-
-      const rankedBusinesses = (businessRows || [])
-        .map((business) => ({
-          business,
-          score: scoreBusiness(business as Business, normalized, matchingCategoryIds, matchingAreaIds),
-        }))
-        .filter((entry) => entry.score > 0)
-        .sort((a, b) => b.score - a.score)
-        .slice(0, 20)
-        .map((entry) => entry.business as Business);
-
-      setResults({
-        categories: catRes.data || [],
-        areas: areaRes.data || [],
-        businesses: rankedBusinesses,
-      });
-      setLoading(false);
     }, 300);
 
     return () => {

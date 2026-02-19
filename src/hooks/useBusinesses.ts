@@ -6,15 +6,33 @@ const PAGE_SIZE = 33;
 
 const DAY_NAMES = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'] as const;
 
-function buildSearchFilter(rawQuery?: string) {
-  if (!rawQuery) return null;
-  const cleaned = rawQuery
+function normalizeQuery(rawQuery?: string) {
+  if (!rawQuery) return '';
+  return rawQuery
     .trim()
     .replace(/[,%()']/g, ' ')
     .replace(/\s+/g, ' ');
-  if (!cleaned) return null;
-  const pattern = `%${cleaned}%`;
-  return `name.ilike.${pattern},description.ilike.${pattern},address.ilike.${pattern}`;
+}
+
+function buildSearchFilter(
+  cleanedQuery?: string,
+  categoryIds: string[] = [],
+  areaIds: string[] = []
+) {
+  if (!cleanedQuery) return null;
+  const pattern = `%${cleanedQuery}%`;
+  const filters = [
+    `name.ilike.${pattern}`,
+    `description.ilike.${pattern}`,
+    `address.ilike.${pattern}`,
+  ];
+  if (categoryIds.length > 0) {
+    filters.push(`category_id.in.(${categoryIds.join(',')})`);
+  }
+  if (areaIds.length > 0) {
+    filters.push(`area_id.in.(${areaIds.join(',')})`);
+  }
+  return filters.join(',');
 }
 
 function isOpenNow(opening_hours: OpeningHours | null): boolean {
@@ -59,48 +77,74 @@ export function useBusinesses(
     async function fetch() {
       setLoading(true);
 
-      if (openNow) {
+      try {
+        const cleanedSearchQuery = normalizeQuery(searchQuery);
+        let searchFilter: string | null = null;
+
+        if (cleanedSearchQuery) {
+          const pattern = `%${cleanedSearchQuery}%`;
+          const [catRes, areaRes] = await Promise.all([
+            supabase
+              .from('categories')
+              .select('id')
+              .ilike('name', pattern)
+              .limit(20),
+            supabase
+              .from('areas')
+              .select('id')
+              .ilike('name', pattern)
+              .limit(20),
+          ]);
+
+          const matchingCategoryIds = (catRes.data ?? []).map((category) => category.id);
+          const matchingAreaIds = (areaRes.data ?? []).map((area) => area.id);
+          searchFilter = buildSearchFilter(cleanedSearchQuery, matchingCategoryIds, matchingAreaIds);
+        }
+
+        if (openNow) {
+          let query = supabase
+            .from('businesses')
+            .select('*, categories(*), areas(*)')
+            .eq('is_placeholder', false);
+
+          if (categoryId) query = query.eq('category_id', categoryId);
+          if (areaId) query = query.eq('area_id', areaId);
+          if (minRating) query = query.gte('rating', minRating);
+          if (searchFilter) query = query.or(searchFilter);
+
+          const { data } = await query.order('name');
+          const all = (data || []) as Business[];
+          const filtered = all.filter((business) => isOpenNow(business.opening_hours as OpeningHours));
+          const from = (page - 1) * PAGE_SIZE;
+          const paginated = filtered.slice(from, from + PAGE_SIZE);
+          setBusinesses(paginated);
+          setTotalCount(filtered.length);
+          return;
+        }
+
         let query = supabase
           .from('businesses')
-          .select('*, categories(*), areas(*)')
+          .select('*, categories(*), areas(*)', { count: 'exact' })
           .eq('is_placeholder', false);
 
         if (categoryId) query = query.eq('category_id', categoryId);
         if (areaId) query = query.eq('area_id', areaId);
         if (minRating) query = query.gte('rating', minRating);
-        const searchFilter = buildSearchFilter(searchQuery);
         if (searchFilter) query = query.or(searchFilter);
 
-        const { data } = await query.order('name');
-        const all = (data || []) as Business[];
-        const filtered = all.filter((b) => isOpenNow(b.opening_hours as OpeningHours));
         const from = (page - 1) * PAGE_SIZE;
-        const paginated = filtered.slice(from, from + PAGE_SIZE);
-        setBusinesses(paginated);
-        setTotalCount(filtered.length);
+        const to = from + PAGE_SIZE - 1;
+
+        const { data, count } = await query.order('name').range(from, to);
+
+        if (data) setBusinesses(data);
+        if (count !== null) setTotalCount(count);
+      } catch {
+        setBusinesses([]);
+        setTotalCount(0);
+      } finally {
         setLoading(false);
-        return;
       }
-
-      let query = supabase
-        .from('businesses')
-        .select('*, categories(*), areas(*)', { count: 'exact' })
-        .eq('is_placeholder', false);
-
-      if (categoryId) query = query.eq('category_id', categoryId);
-      if (areaId) query = query.eq('area_id', areaId);
-      if (minRating) query = query.gte('rating', minRating);
-      const searchFilter = buildSearchFilter(searchQuery);
-      if (searchFilter) query = query.or(searchFilter);
-
-      const from = (page - 1) * PAGE_SIZE;
-      const to = from + PAGE_SIZE - 1;
-
-      const { data, count } = await query.order('name').range(from, to);
-
-      if (data) setBusinesses(data);
-      if (count !== null) setTotalCount(count);
-      setLoading(false);
     }
     fetch();
   }, [categoryId, areaId, page, minRating, openNow, searchQuery]);

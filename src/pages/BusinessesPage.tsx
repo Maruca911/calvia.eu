@@ -91,7 +91,7 @@ export default function BusinessesPage() {
             {t('businesses.desc')}
           </p>
           <div className="max-w-xl mx-auto">
-            <SearchBar />
+            <SearchBar initialQuery={searchQuery} />
           </div>
         </div>
       </section>

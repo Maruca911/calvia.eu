@@ -5,10 +5,15 @@ import { useTranslation } from 'react-i18next';
 import { useLocalizedPath } from '../../hooks/useLanguage';
 import { useSearch } from '../../hooks/useSearch';
 
-export default function SearchBar({ onClose }: { onClose?: () => void }) {
+interface SearchBarProps {
+  onClose?: () => void;
+  initialQuery?: string;
+}
+
+export default function SearchBar({ onClose, initialQuery = '' }: SearchBarProps) {
   const { t } = useTranslation();
   const { l } = useLocalizedPath();
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState(initialQuery);
   const [open, setOpen] = useState(false);
   const { results, loading } = useSearch(query);
   const navigate = useNavigate();
@@ -29,6 +34,10 @@ export default function SearchBar({ onClose }: { onClose?: () => void }) {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
+
+  useEffect(() => {
+    setQuery(initialQuery);
+  }, [initialQuery]);
 
   function handleSelect(path: string) {
     setQuery('');
@@ -164,7 +173,7 @@ export default function SearchBar({ onClose }: { onClose?: () => void }) {
                   onClick={goToAllResults}
                   className="w-full flex items-center justify-between gap-2 px-3 py-2.5 rounded-lg bg-ocean-50 text-ocean-700 hover:bg-ocean-100 transition-colors text-sm font-medium"
                 >
-                  <span>{t('businesses.all')} {t('search.businessesLabel').toLowerCase()}</span>
+                  <span>{t('businesses.all')} {t('search.businessesLabel')}</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
