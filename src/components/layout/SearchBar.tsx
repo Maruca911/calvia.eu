@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Search, X, MapPin, Tag, Store, Loader2 } from 'lucide-react';
+import { Search, X, MapPin, Tag, Store, Loader2, ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useLocalizedPath } from '../../hooks/useLanguage';
 import { useSearch } from '../../hooks/useSearch';
@@ -37,6 +37,12 @@ export default function SearchBar({ onClose }: { onClose?: () => void }) {
     navigate(path);
   }
 
+  function goToAllResults() {
+    const trimmed = query.trim();
+    if (trimmed.length < 2) return;
+    handleSelect(l(`/businesses?q=${encodeURIComponent(trimmed)}`));
+  }
+
   return (
     <div ref={wrapperRef} className="relative w-full max-w-xl">
       <div className="relative">
@@ -50,6 +56,12 @@ export default function SearchBar({ onClose }: { onClose?: () => void }) {
             setOpen(true);
           }}
           onFocus={() => setOpen(true)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              e.preventDefault();
+              goToAllResults();
+            }
+          }}
           placeholder={t('search.placeholder')}
           className="w-full pl-10 pr-10 py-3 rounded-xl border border-gray-200 bg-white
                      text-ocean-800 placeholder:text-gray-400
@@ -146,6 +158,16 @@ export default function SearchBar({ onClose }: { onClose?: () => void }) {
                   ))}
                 </div>
               )}
+
+              <div className="border-t border-gray-100 p-2">
+                <button
+                  onClick={goToAllResults}
+                  className="w-full flex items-center justify-between gap-2 px-3 py-2.5 rounded-lg bg-ocean-50 text-ocean-700 hover:bg-ocean-100 transition-colors text-sm font-medium"
+                >
+                  <span>{t('businesses.all')} {t('search.businessesLabel').toLowerCase()}</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
             </div>
           )}
         </div>

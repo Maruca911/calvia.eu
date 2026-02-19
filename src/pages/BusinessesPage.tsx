@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ChevronLeft, ChevronRight, SlidersHorizontal, X, Lightbulb } from 'lucide-react';
 import { useCategories } from '../hooks/useCategories';
@@ -14,6 +15,8 @@ import { useTranslatedList } from '../hooks/useTranslatedContent';
 
 export default function BusinessesPage() {
   const { t } = useTranslation();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const searchQuery = (searchParams.get('q') || '').trim();
   usePageMeta(
     t('seo.businessesTitle'),
     t('seo.businessesDesc')
@@ -34,7 +37,8 @@ export default function BusinessesPage() {
     selectedArea || undefined,
     page,
     minRating || undefined,
-    openNow
+    openNow,
+    searchQuery || undefined
   );
 
   function handleCategoryChange(id: string) {
@@ -63,9 +67,16 @@ export default function BusinessesPage() {
     setMinRating(0);
     setOpenNow(false);
     setPage(1);
+    if (searchQuery) {
+      setSearchParams({}, { replace: true });
+    }
   }
 
-  const hasFilters = selectedCategory || selectedArea || minRating > 0 || openNow;
+  useEffect(() => {
+    setPage(1);
+  }, [searchQuery]);
+
+  const hasFilters = !!(selectedCategory || selectedArea || minRating > 0 || openNow || searchQuery);
   const isLoading = loading || catsLoading || areasLoading;
   const [suggestOpen, setSuggestOpen] = useState(false);
 
@@ -171,9 +182,10 @@ export default function BusinessesPage() {
 
           <div>
             {hasFilters && (
-              <div className="flex items-center gap-3 mb-4">
-                <p className="text-sm text-gray-500">
+              <div className="flex flex-wrap items-center gap-3 mb-4">
+                <p className="text-sm text-gray-500 flex-1 min-w-[220px]">
                   {t('businesses.showing')} {totalCount} {totalCount === 1 ? t('businesses.result') : t('businesses.results')}
+                  {searchQuery && <> for &ldquo;{searchQuery}&rdquo;</>}
                 </p>
                 <button
                   onClick={handleReset}

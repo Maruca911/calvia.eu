@@ -6,6 +6,17 @@ const PAGE_SIZE = 33;
 
 const DAY_NAMES = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'] as const;
 
+function buildSearchFilter(rawQuery?: string) {
+  if (!rawQuery) return null;
+  const cleaned = rawQuery
+    .trim()
+    .replace(/[,%()']/g, ' ')
+    .replace(/\s+/g, ' ');
+  if (!cleaned) return null;
+  const pattern = `%${cleaned}%`;
+  return `name.ilike.${pattern},description.ilike.${pattern},address.ilike.${pattern}`;
+}
+
 function isOpenNow(opening_hours: OpeningHours | null): boolean {
   if (!opening_hours) return false;
   const now = new Date();
@@ -37,7 +48,8 @@ export function useBusinesses(
   areaId?: string,
   page: number = 1,
   minRating?: number,
-  openNow?: boolean
+  openNow?: boolean,
+  searchQuery?: string
 ) {
   const [businesses, setBusinesses] = useState<Business[]>([]);
   const [totalCount, setTotalCount] = useState(0);
@@ -56,6 +68,8 @@ export function useBusinesses(
         if (categoryId) query = query.eq('category_id', categoryId);
         if (areaId) query = query.eq('area_id', areaId);
         if (minRating) query = query.gte('rating', minRating);
+        const searchFilter = buildSearchFilter(searchQuery);
+        if (searchFilter) query = query.or(searchFilter);
 
         const { data } = await query.order('name');
         const all = (data || []) as Business[];
@@ -76,6 +90,8 @@ export function useBusinesses(
       if (categoryId) query = query.eq('category_id', categoryId);
       if (areaId) query = query.eq('area_id', areaId);
       if (minRating) query = query.gte('rating', minRating);
+      const searchFilter = buildSearchFilter(searchQuery);
+      if (searchFilter) query = query.or(searchFilter);
 
       const from = (page - 1) * PAGE_SIZE;
       const to = from + PAGE_SIZE - 1;
@@ -87,7 +103,7 @@ export function useBusinesses(
       setLoading(false);
     }
     fetch();
-  }, [categoryId, areaId, page, minRating, openNow]);
+  }, [categoryId, areaId, page, minRating, openNow, searchQuery]);
 
   const totalPages = Math.ceil(totalCount / PAGE_SIZE);
 
