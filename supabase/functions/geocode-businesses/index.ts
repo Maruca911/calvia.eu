@@ -9,7 +9,7 @@ const corsHeaders = {
 };
 
 const NOMINATIM_URL = "https://nominatim.openstreetmap.org/search";
-const DELAY_MS = 1100;
+const DELAY_MS = 1200;
 
 const MIN_LAT = 39.45;
 const MAX_LAT = 39.63;
@@ -27,32 +27,49 @@ interface NominatimResult {
   importance: number;
 }
 
-function cleanAddress(address: string): string {
-  return address
-    .replace(/^C\/\s*/i, "Carrer ")
-    .replace(/\bCarrer de la\b/gi, "")
-    .replace(/\bCarrer del\b/gi, "")
-    .replace(/\bCarrer de\b/gi, "")
-    .replace(/\bCarrer d['']\b/gi, "")
-    .replace(/,\s*07\d{3}\s*/g, ", ")
-    .replace(/\s+/g, " ")
+function stripStreetPrefix(street: string): string {
+  return street
+    .replace(/^C\/\s*/i, "")
+    .replace(/^Carrer\s+de\s+la\s+/i, "")
+    .replace(/^Carrer\s+del\s+/i, "")
+    .replace(/^Carrer\s+de\s+/i, "")
+    .replace(/^Carrer\s+d['']\s*/i, "")
+    .replace(/^Carrer\s+/i, "")
+    .replace(/^Calle\s+del\s+/i, "")
+    .replace(/^Calle\s+de\s+la\s+/i, "")
+    .replace(/^Calle\s+de\s+/i, "")
+    .replace(/^Calle\s+/i, "")
+    .replace(/^Avinguda\s+de\s+/i, "")
+    .replace(/^Avinguda\s+/i, "")
+    .replace(/^Avenida\s+de\s+/i, "")
+    .replace(/^Avenida\s+/i, "")
+    .replace(/^Passeig\s+de\s+/i, "")
+    .replace(/^Passeig\s+/i, "")
+    .replace(/^Paseo\s+de\s+/i, "")
+    .replace(/^Paseo\s+/i, "")
     .trim();
 }
 
-function extractStreetCore(address: string): string {
-  const cleaned = cleanAddress(address);
-  const parts = cleaned.split(",").map((p) => p.trim());
-  return parts[0] || cleaned;
+function parseAddress(address: string): { street: string; locality: string } {
+  const withoutPostal = address.replace(/\b07\d{3}\b/g, "").replace(/\s{2,}/g, " ").trim();
+  const parts = withoutPostal.split(",").map((p) => p.trim()).filter(Boolean);
+
+  if (parts.length === 0) return { street: "", locality: "" };
+  if (parts.length === 1) return { street: parts[0], locality: "" };
+
+  const street = parts[0];
+  const locality = parts[parts.length - 1];
+  return { street, locality };
 }
 
 async function nominatimSearch(
   query: string
-): Promise<{ lat: number; lng: number } | null> {
+): Promise<{ lat: number; lng: number; query: string } | null> {
   try {
     const params = new URLSearchParams({
       q: query,
       format: "json",
-      limit: "3",
+      limit: "5",
       countrycodes: "es",
     });
 
@@ -74,7 +91,7 @@ async function nominatimSearch(
         lng >= MIN_LNG &&
         lng <= MAX_LNG
       ) {
-        return { lat, lng };
+        return { lat, lng, query };
       }
     }
   } catch {
@@ -83,20 +100,31 @@ async function nominatimSearch(
   return null;
 }
 
-async function geocodeAddress(
+async function geocodeBusiness(
   address: string,
   areaName: string,
   businessName: string
-): Promise<{ lat: number; lng: number } | null> {
-  const streetCore = extractStreetCore(address);
+): Promise<{ lat: number; lng: number; query: string } | null> {
+  const { street, locality } = parseAddress(address);
+  const streetCore = stripStreetPrefix(street);
+  const localityClean = locality || areaName;
 
-  const queries = [
-    `${address}, Calvià, Mallorca`,
-    `${streetCore}, ${areaName}, Mallorca`,
-    `${streetCore}, Calvià, Mallorca`,
-    `${businessName}, ${areaName}, Mallorca`,
-    `${areaName}, Calvià, Mallorca, Spain`,
-  ];
+  const queries: string[] = [];
+
+  if (streetCore && localityClean) {
+    queries.push(`${streetCore}, ${localityClean}, Mallorca`);
+  }
+  if (streetCore && localityClean !== areaName) {
+    queries.push(`${streetCore}, ${areaName}, Mallorca`);
+  }
+  if (streetCore) {
+    queries.push(`${streetCore}, Calvià, Mallorca`);
+  }
+  queries.push(`${businessName}, ${localityClean}, Mallorca`);
+  if (localityClean !== areaName) {
+    queries.push(`${businessName}, ${areaName}, Mallorca`);
+  }
+  queries.push(`${localityClean}, Calvià, Mallorca`);
 
   const seen = new Set<string>();
   for (const q of queries) {
@@ -125,7 +153,7 @@ Deno.serve(async (req: Request) => {
     const url = new URL(req.url);
     const limitParam = url.searchParams.get("limit");
     const confidenceParam = url.searchParams.get("confidence");
-    const limit = Math.min(parseInt(limitParam || "20", 10), 100);
+    const limit = Math.min(parseInt(limitParam || "10", 10), 50);
     const confidence = confidenceParam || "approximate";
 
     const { data: businesses, error: fetchError } = await supabase
@@ -169,14 +197,14 @@ Deno.serve(async (req: Request) => {
     for (const biz of businesses) {
       const areaName =
         (biz.areas as { name: string } | null)?.name || "Calvia";
-      const coords = await geocodeAddress(biz.address, areaName, biz.name);
+      const result = await geocodeBusiness(biz.address, areaName, biz.name);
 
-      if (coords) {
+      if (result) {
         const { error: updateError } = await supabase
           .from("businesses")
           .update({
-            latitude: coords.lat,
-            longitude: coords.lng,
+            latitude: result.lat,
+            longitude: result.lng,
             location_confidence: "exact",
             needs_geocoding: false,
           })
@@ -184,7 +212,12 @@ Deno.serve(async (req: Request) => {
 
         if (!updateError) {
           updated++;
-          results.push({ name: biz.name, status: "updated", coords });
+          results.push({
+            name: biz.name,
+            status: "updated",
+            coords: { lat: result.lat, lng: result.lng },
+            query_used: result.query,
+          });
         } else {
           failed++;
           results.push({ name: biz.name, status: "update_failed" });
