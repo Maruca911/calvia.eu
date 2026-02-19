@@ -39,6 +39,8 @@ export interface OpeningHours {
   sunday?: string;
 }
 
+export type LocationConfidence = 'exact' | 'approximate' | 'area';
+
 export interface Business {
   id: string;
   name: string;
@@ -59,7 +61,24 @@ export interface Business {
   image_url: string;
   images: string[];
   opening_hours: OpeningHours;
+  location_confidence: LocationConfidence;
+  needs_geocoding: boolean;
   created_at: string;
+}
+
+export interface BusinessSuggestion {
+  id?: string;
+  business_name: string;
+  category: string;
+  area: string;
+  address: string;
+  phone: string;
+  website: string;
+  description: string;
+  submitter_name: string;
+  submitter_email: string;
+  status?: 'pending' | 'approved' | 'rejected';
+  created_at?: string;
 }
 
 export interface BusinessWithRelations extends Business {

@@ -1,13 +1,43 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
-import type { Business } from '../types/database';
+import type { Business, OpeningHours } from '../types/database';
 
 const PAGE_SIZE = 33;
+
+const DAY_NAMES = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'] as const;
+
+function isOpenNow(opening_hours: OpeningHours | null): boolean {
+  if (!opening_hours) return false;
+  const now = new Date();
+  const dayKey = DAY_NAMES[now.getDay()];
+  const hoursStr = opening_hours[dayKey];
+  if (!hoursStr) return false;
+
+  const timeRange = hoursStr.toLowerCase().replace(/\s/g, '');
+  if (timeRange === 'closed' || timeRange === 'cerrado') return false;
+
+  const match = timeRange.match(/^(\d{1,2}):?(\d{2})?[–\-](\d{1,2}):?(\d{2})?$/);
+  if (!match) return true;
+
+  const openH = parseInt(match[1], 10);
+  const openM = parseInt(match[2] || '0', 10);
+  const closeH = parseInt(match[3], 10);
+  const closeM = parseInt(match[4] || '0', 10);
+
+  const currentMins = now.getHours() * 60 + now.getMinutes();
+  const openMins = openH * 60 + openM;
+  let closeMins = closeH * 60 + closeM;
+  if (closeMins < openMins) closeMins += 24 * 60;
+
+  return currentMins >= openMins && currentMins <= closeMins;
+}
 
 export function useBusinesses(
   categoryId?: string,
   areaId?: string,
-  page: number = 1
+  page: number = 1,
+  minRating?: number,
+  openNow?: boolean
 ) {
   const [businesses, setBusinesses] = useState<Business[]>([]);
   const [totalCount, setTotalCount] = useState(0);
@@ -16,6 +46,28 @@ export function useBusinesses(
   useEffect(() => {
     async function fetch() {
       setLoading(true);
+
+      if (openNow) {
+        let query = supabase
+          .from('businesses')
+          .select('*, categories(*), areas(*)')
+          .eq('is_placeholder', false);
+
+        if (categoryId) query = query.eq('category_id', categoryId);
+        if (areaId) query = query.eq('area_id', areaId);
+        if (minRating) query = query.gte('rating', minRating);
+
+        const { data } = await query.order('name');
+        const all = (data || []) as Business[];
+        const filtered = all.filter((b) => isOpenNow(b.opening_hours as OpeningHours));
+        const from = (page - 1) * PAGE_SIZE;
+        const paginated = filtered.slice(from, from + PAGE_SIZE);
+        setBusinesses(paginated);
+        setTotalCount(filtered.length);
+        setLoading(false);
+        return;
+      }
+
       let query = supabase
         .from('businesses')
         .select('*, categories(*), areas(*)', { count: 'exact' })
@@ -23,20 +75,19 @@ export function useBusinesses(
 
       if (categoryId) query = query.eq('category_id', categoryId);
       if (areaId) query = query.eq('area_id', areaId);
+      if (minRating) query = query.gte('rating', minRating);
 
       const from = (page - 1) * PAGE_SIZE;
       const to = from + PAGE_SIZE - 1;
 
-      const { data, count } = await query
-        .order('name')
-        .range(from, to);
+      const { data, count } = await query.order('name').range(from, to);
 
       if (data) setBusinesses(data);
       if (count !== null) setTotalCount(count);
       setLoading(false);
     }
     fetch();
-  }, [categoryId, areaId, page]);
+  }, [categoryId, areaId, page, minRating, openNow]);
 
   const totalPages = Math.ceil(totalCount / PAGE_SIZE);
 

@@ -1,4 +1,4 @@
-import { X, SlidersHorizontal } from 'lucide-react';
+import { X, SlidersHorizontal, Star, Clock } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import type { Category, Area } from '../../types/database';
 
@@ -7,24 +7,38 @@ interface BusinessFiltersProps {
   areas: Area[];
   selectedCategory: string;
   selectedArea: string;
+  minRating: number;
+  openNow: boolean;
   onCategoryChange: (id: string) => void;
   onAreaChange: (id: string) => void;
+  onMinRatingChange: (rating: number) => void;
+  onOpenNowChange: (open: boolean) => void;
   onReset: () => void;
   resultCount: number;
 }
+
+const RATING_OPTIONS = [
+  { label: '4+', value: 4 },
+  { label: '3+', value: 3 },
+  { label: '2+', value: 2 },
+];
 
 export default function BusinessFilters({
   categories,
   areas,
   selectedCategory,
   selectedArea,
+  minRating,
+  openNow,
   onCategoryChange,
   onAreaChange,
+  onMinRatingChange,
+  onOpenNowChange,
   onReset,
   resultCount,
 }: BusinessFiltersProps) {
   const { t } = useTranslation();
-  const hasFilters = selectedCategory || selectedArea;
+  const hasFilters = selectedCategory || selectedArea || minRating > 0 || openNow;
 
   return (
     <div className="space-y-4">
@@ -84,6 +98,47 @@ export default function BusinessFilters({
         </select>
       </div>
 
+      <div>
+        <label className="block text-xs font-medium text-gray-500 uppercase tracking-wider mb-2">
+          {t('filters.minRating')}
+        </label>
+        <div className="flex gap-1.5">
+          {RATING_OPTIONS.map((opt) => (
+            <button
+              key={opt.value}
+              onClick={() => onMinRatingChange(minRating === opt.value ? 0 : opt.value)}
+              className={`flex-1 flex items-center justify-center gap-1 py-2 rounded-lg text-xs font-medium border transition-all
+                ${minRating === opt.value
+                  ? 'bg-sun-500 text-white border-sun-500'
+                  : 'bg-white text-gray-600 border-gray-200 hover:border-sun-300 hover:text-sun-600'
+                }`}
+            >
+              <Star className={`w-3 h-3 ${minRating === opt.value ? 'fill-current' : ''}`} />
+              {opt.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <button
+          onClick={() => onOpenNowChange(!openNow)}
+          className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg border text-sm font-medium transition-all
+            ${openNow
+              ? 'bg-green-50 text-green-700 border-green-300'
+              : 'bg-white text-gray-600 border-gray-200 hover:border-green-300 hover:text-green-600'
+            }`}
+        >
+          <span className="flex items-center gap-2">
+            <Clock className={`w-4 h-4 ${openNow ? 'text-green-600' : 'text-gray-400'}`} />
+            {t('filters.openNow')}
+          </span>
+          <div className={`w-9 h-5 rounded-full transition-colors relative ${openNow ? 'bg-green-500' : 'bg-gray-200'}`}>
+            <div className={`absolute top-0.5 w-4 h-4 bg-white rounded-full shadow transition-transform ${openNow ? 'translate-x-4' : 'translate-x-0.5'}`} />
+          </div>
+        </button>
+      </div>
+
       <div className="pt-3 border-t border-gray-100">
         <p className="text-xs text-gray-400">
           {resultCount} {resultCount === 1 ? t('filters.businessFound') : t('filters.businessesFound')}
@@ -104,6 +159,22 @@ export default function BusinessFilters({
             <span className="inline-flex items-center gap-1 bg-sun-50 text-sun-600 text-xs font-medium px-2.5 py-1 rounded-full">
               {areas.find((a) => a.id === selectedArea)?.name}
               <button onClick={() => onAreaChange('')} className="hover:text-sun-800">
+                <X className="w-3 h-3" />
+              </button>
+            </span>
+          )}
+          {minRating > 0 && (
+            <span className="inline-flex items-center gap-1 bg-sun-50 text-sun-600 text-xs font-medium px-2.5 py-1 rounded-full">
+              <Star className="w-3 h-3 fill-current" /> {minRating}+
+              <button onClick={() => onMinRatingChange(0)} className="hover:text-sun-800">
+                <X className="w-3 h-3" />
+              </button>
+            </span>
+          )}
+          {openNow && (
+            <span className="inline-flex items-center gap-1 bg-green-50 text-green-600 text-xs font-medium px-2.5 py-1 rounded-full">
+              <Clock className="w-3 h-3" /> {t('filters.openNow')}
+              <button onClick={() => onOpenNowChange(false)} className="hover:text-green-800">
                 <X className="w-3 h-3" />
               </button>
             </span>

@@ -1,9 +1,19 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Globe, Star, ArrowRight, ImageOff } from 'lucide-react';
+import { MapPin, Phone, Globe, Star, ArrowRight, ImageOff, Navigation } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useLocalizedPath } from '../../hooks/useLanguage';
 import { getIcon } from '../../lib/icons';
 import type { BusinessWithRelations } from '../../types/database';
+
+function buildGoogleMapsUrl(business: BusinessWithRelations): string {
+  if (business.latitude && business.longitude && business.latitude !== 0 && business.longitude !== 0) {
+    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(business.name)}&query_place_id=&center=${business.latitude},${business.longitude}`;
+  }
+  const query = [business.name, business.address, business.areas?.name, 'Calvia Mallorca']
+    .filter(Boolean)
+    .join(', ');
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+}
 
 interface BusinessCardProps {
   business: BusinessWithRelations;
@@ -90,7 +100,18 @@ export default function BusinessCard({ business }: BusinessCardProps) {
               {business.website}
             </a>
           )}
-          {!business.phone && !business.email && !business.website && (
+          {(business.address || (business.latitude && business.latitude !== 0)) && (
+            <a
+              href={buildGoogleMapsUrl(business)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-xs text-gray-500 hover:text-ocean-500 transition-colors"
+            >
+              <Navigation className="w-3.5 h-3.5 flex-shrink-0" />
+              {t('businesses.getDirections')}
+            </a>
+          )}
+          {!business.phone && !business.email && !business.website && !business.address && (
             <p className="text-xs text-gray-400 italic">{t('businesses.contactSoon')}</p>
           )}
         </div>

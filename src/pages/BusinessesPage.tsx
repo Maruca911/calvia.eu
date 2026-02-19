@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ChevronLeft, ChevronRight, SlidersHorizontal, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, SlidersHorizontal, X, Lightbulb } from 'lucide-react';
 import { useCategories } from '../hooks/useCategories';
 import { useAreas } from '../hooks/useAreas';
 import { useBusinesses } from '../hooks/useBusinesses';
 import BusinessCard from '../components/businesses/BusinessCard';
 import BusinessFilters from '../components/businesses/BusinessFilters';
+import SuggestBusinessForm from '../components/businesses/SuggestBusinessForm';
 import SearchBar from '../components/layout/SearchBar';
 import { getIcon } from '../lib/icons';
 import { usePageMeta } from '../hooks/usePageMeta';
@@ -23,13 +24,17 @@ export default function BusinessesPage() {
   const areas = useTranslatedList('area', rawAreas, ['name', 'description']);
   const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedArea, setSelectedArea] = useState('');
+  const [minRating, setMinRating] = useState(0);
+  const [openNow, setOpenNow] = useState(false);
   const [page, setPage] = useState(1);
   const [filtersOpen, setFiltersOpen] = useState(false);
 
   const { businesses, totalCount, totalPages, loading } = useBusinesses(
     selectedCategory || undefined,
     selectedArea || undefined,
-    page
+    page,
+    minRating || undefined,
+    openNow
   );
 
   function handleCategoryChange(id: string) {
@@ -42,14 +47,27 @@ export default function BusinessesPage() {
     setPage(1);
   }
 
-  function handleReset() {
-    setSelectedCategory('');
-    setSelectedArea('');
+  function handleMinRatingChange(rating: number) {
+    setMinRating(rating);
     setPage(1);
   }
 
-  const hasFilters = selectedCategory || selectedArea;
+  function handleOpenNowChange(open: boolean) {
+    setOpenNow(open);
+    setPage(1);
+  }
+
+  function handleReset() {
+    setSelectedCategory('');
+    setSelectedArea('');
+    setMinRating(0);
+    setOpenNow(false);
+    setPage(1);
+  }
+
+  const hasFilters = selectedCategory || selectedArea || minRating > 0 || openNow;
   const isLoading = loading || catsLoading || areasLoading;
+  const [suggestOpen, setSuggestOpen] = useState(false);
 
   return (
     <div className="pt-24 pb-16">
@@ -113,23 +131,41 @@ export default function BusinessesPage() {
             {filtersOpen ? t('businesses.hideFilters') : t('businesses.showFilters')}
             {hasFilters && (
               <span className="bg-ocean-500 text-white text-xs px-1.5 py-0.5 rounded-full">
-                {(selectedCategory ? 1 : 0) + (selectedArea ? 1 : 0)}
+                {(selectedCategory ? 1 : 0) + (selectedArea ? 1 : 0) + (minRating > 0 ? 1 : 0) + (openNow ? 1 : 0)}
               </span>
             )}
           </button>
 
           <aside className={`${filtersOpen ? 'block' : 'hidden'} lg:block mb-6 lg:mb-0`}>
-            <div className="card p-5 sticky top-28">
-              <BusinessFilters
-                categories={categories}
-                areas={areas}
-                selectedCategory={selectedCategory}
-                selectedArea={selectedArea}
-                onCategoryChange={handleCategoryChange}
-                onAreaChange={handleAreaChange}
-                onReset={handleReset}
-                resultCount={totalCount}
-              />
+            <div className="space-y-4 sticky top-28">
+              <div className="card p-5">
+                <BusinessFilters
+                  categories={categories}
+                  areas={areas}
+                  selectedCategory={selectedCategory}
+                  selectedArea={selectedArea}
+                  minRating={minRating}
+                  openNow={openNow}
+                  onCategoryChange={handleCategoryChange}
+                  onAreaChange={handleAreaChange}
+                  onMinRatingChange={handleMinRatingChange}
+                  onOpenNowChange={handleOpenNowChange}
+                  onReset={handleReset}
+                  resultCount={totalCount}
+                />
+              </div>
+              <button
+                onClick={() => setSuggestOpen(true)}
+                className="w-full card p-4 flex items-center gap-3 hover:border-ocean-200 hover:shadow-md transition-all group text-left"
+              >
+                <div className="w-9 h-9 rounded-lg bg-ocean-50 flex items-center justify-center flex-shrink-0 group-hover:bg-ocean-100 transition-colors">
+                  <Lightbulb className="w-4 h-4 text-ocean-500" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-ocean-800">{t('suggest.buttonTitle')}</p>
+                  <p className="text-xs text-gray-500">{t('suggest.buttonDesc')}</p>
+                </div>
+              </button>
             </div>
           </aside>
 
@@ -225,6 +261,31 @@ export default function BusinessesPage() {
           </div>
         </div>
       </section>
+
+      {suggestOpen && (
+        <div
+          className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4"
+          onClick={(e) => { if (e.target === e.currentTarget) setSuggestOpen(false); }}
+        >
+          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+            <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-gray-100">
+              <div className="flex items-center gap-2">
+                <Lightbulb className="w-5 h-5 text-ocean-500" />
+                <h2 className="font-display text-xl font-bold text-ocean-800">{t('suggest.title')}</h2>
+              </div>
+              <button
+                onClick={() => setSuggestOpen(false)}
+                className="text-gray-400 hover:text-gray-600 transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            <div className="px-6 pb-6 pt-5">
+              <SuggestBusinessForm onClose={() => setSuggestOpen(false)} />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

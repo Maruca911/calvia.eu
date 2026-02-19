@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import {
   Phone, Mail, Globe, MapPin, Star, ArrowLeft, ExternalLink,
-  Clock, Tag, Share2, ChevronLeft, ChevronRight, X,
+  Clock, Tag, Share2, ChevronLeft, ChevronRight, X, Navigation,
 } from 'lucide-react';
 import { useBusiness } from '../hooks/useBusiness';
 import { useLocalizedPath } from '../hooks/useLanguage';
@@ -176,6 +176,28 @@ export default function BusinessProfilePage() {
   const hasSocials = Object.values(socialLinks).some(Boolean);
   const galleryImages: string[] = Array.isArray(business.images) ? business.images : [];
   const openingHours: OpeningHours = business.opening_hours || {};
+
+  function buildGoogleMapsDirectionsUrl(): string {
+    if (business!.latitude && business!.longitude && business!.latitude !== 0 && business!.longitude !== 0) {
+      return `https://www.google.com/maps/dir/?api=1&destination=${business!.latitude},${business!.longitude}&destination_place_id=`;
+    }
+    const dest = [business!.name, business!.address, business!.areas?.name, 'Calvia Mallorca']
+      .filter(Boolean)
+      .join(', ');
+    return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(dest)}`;
+  }
+
+  function buildGoogleMapsSearchUrl(): string {
+    if (business!.latitude && business!.longitude && business!.latitude !== 0 && business!.longitude !== 0) {
+      return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(business!.name)}&center=${business!.latitude},${business!.longitude}`;
+    }
+    const query = [business!.name, business!.address, business!.areas?.name, 'Calvia Mallorca']
+      .filter(Boolean)
+      .join(', ');
+    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+  }
+
+  const hasLocation = !!(business.address || (business.latitude && business.latitude !== 0));
 
   function handleShare() {
     if (navigator.share) {
@@ -351,18 +373,48 @@ export default function BusinessProfilePage() {
               </div>
             )}
 
-            {business.address && (
+            {hasLocation && (
               <div>
                 <h2 className="font-display text-xl font-semibold text-ocean-800 mb-3">{t('profile.locationTitle')}</h2>
                 <div className="card p-5">
                   <div className="flex items-start gap-3">
                     <MapPin className="w-5 h-5 text-ocean-500 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p className="text-ocean-800 font-medium">{business.address}</p>
+                    <div className="flex-1">
+                      {business.address && (
+                        <p className="text-ocean-800 font-medium">{business.address}</p>
+                      )}
                       {business.areas && (
                         <p className="text-gray-500 text-sm mt-1">{business.areas.name}, Calvia, Mallorca</p>
                       )}
+                      {business.location_confidence === 'area' && (
+                        <p className="text-amber-600 text-xs mt-2 flex items-center gap-1">
+                          <MapPin className="w-3 h-3" />
+                          {t('profile.approximateLocation')}
+                        </p>
+                      )}
                     </div>
+                  </div>
+                  <div className="flex gap-3 mt-4 pt-4 border-t border-gray-100">
+                    <a
+                      href={buildGoogleMapsDirectionsUrl()}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-2 bg-ocean-500 text-white text-sm font-medium
+                                 px-4 py-2.5 rounded-lg hover:bg-ocean-600 transition-colors"
+                    >
+                      <Navigation className="w-4 h-4" />
+                      {t('profile.getDirections')}
+                    </a>
+                    <a
+                      href={buildGoogleMapsSearchUrl()}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-2 border border-gray-200 text-gray-600 text-sm font-medium
+                                 px-4 py-2.5 rounded-lg hover:bg-gray-50 transition-colors"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      {t('profile.viewOnGoogleMaps')}
+                    </a>
                   </div>
                 </div>
               </div>
@@ -418,7 +470,21 @@ export default function BusinessProfilePage() {
                 </a>
               )}
 
-              {!business.phone && !business.email && !business.website && (
+              {hasLocation && (
+                <a
+                  href={buildGoogleMapsDirectionsUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 w-full border-2 border-gray-200 text-gray-600 font-medium
+                             px-4 py-3 rounded-lg hover:bg-gray-50 hover:border-gray-300 transition-colors"
+                >
+                  <Navigation className="w-5 h-5 flex-shrink-0" />
+                  <span className="text-sm">{t('profile.getDirections')}</span>
+                  <ExternalLink className="w-4 h-4 flex-shrink-0 ml-auto" />
+                </a>
+              )}
+
+              {!business.phone && !business.email && !business.website && !hasLocation && (
                 <p className="text-gray-400 text-sm italic">{t('businesses.contactSoon')}</p>
               )}
             </div>
