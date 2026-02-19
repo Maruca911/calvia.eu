@@ -8,6 +8,9 @@ export interface SearchResults {
   businesses: Business[];
 }
 
+const SEARCH_CANDIDATE_LIMIT = 500;
+const SEARCH_RESULT_LIMIT = 20;
+
 function normalizeQuery(raw: string) {
   return raw
     .trim()
@@ -100,7 +103,7 @@ export function useSearch(query: string) {
           .select('*, categories(*), areas(*)')
           .eq('is_placeholder', false)
           .or(filters.join(','))
-          .limit(60);
+          .limit(SEARCH_CANDIDATE_LIMIT);
 
         const rankedBusinesses = (businessRows || [])
           .map((business) => ({
@@ -109,7 +112,7 @@ export function useSearch(query: string) {
           }))
           .filter((entry) => entry.score > 0)
           .sort((a, b) => b.score - a.score)
-          .slice(0, 20)
+          .slice(0, SEARCH_RESULT_LIMIT)
           .map((entry) => entry.business as Business);
 
         setResults({
