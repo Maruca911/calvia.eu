@@ -4,8 +4,7 @@ import {
   ArrowRight, Gift, Lightbulb, Users, Briefcase, Crown,
   Tag, Heart, Calendar, Eye, TrendingUp, Monitor, Snowflake,
   Megaphone, BarChart3, Globe, BookOpen, Home,
-  Download, ExternalLink, Mail, ShoppingBag, Palette,
-  Stethoscope, Building2, GraduationCap,
+  Download, ExternalLink, Mail, Stethoscope, Building2,
 } from 'lucide-react';
 import ScrollReveal from '../components/ui/ScrollReveal';
 import ContactForm from '../components/about/ContactForm';
@@ -91,9 +90,7 @@ function TheConcept() {
     { name: 'calvia.marketing', url: 'https://calvia.marketing', desc: t('about.domainMarketing'), icon: Megaphone, color: 'bg-rose-500' },
     { name: 'calvia.blog', url: 'https://calvia.blog', desc: t('about.domainBlog'), icon: BookOpen, color: 'bg-sky-500' },
     { name: 'calvia.realestate', url: 'https://calvia.realestate', desc: t('about.domainRealestate'), icon: Home, color: 'bg-amber-600' },
-    { name: 'calvia.shop', url: 'https://calvia.shop', desc: t('about.domainShop'), icon: ShoppingBag, color: 'bg-teal-600' },
-    { name: 'calvia.design', url: 'https://calvia.design', desc: t('about.domainDesign'), icon: Palette, color: 'bg-pink-500' },
-    { name: 'calvia.education', url: 'https://calvia.education', desc: t('about.domainEducation'), icon: GraduationCap, color: 'bg-cyan-600' },
+    { name: 'calvia.jobs', url: 'https://calvia.jobs', desc: 'Local jobs and talent network', icon: Briefcase, color: 'bg-indigo-600' },
   ];
 
   return (

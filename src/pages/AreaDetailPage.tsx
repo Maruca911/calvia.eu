@@ -36,8 +36,7 @@ export default function AreaDetailPage() {
           .select('*, categories(*)')
           .eq('area_id', areaData.id)
           .eq('is_placeholder', false)
-          .order('name')
-          .limit(30);
+          .order('name');
         if (bizData) setBusinesses(bizData as any);
       }
       setLoading(false);
@@ -152,7 +151,7 @@ export default function AreaDetailPage() {
                         {catName}
                       </h4>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        {bizList.slice(0, 6).map((biz) => (
+                        {bizList.map((biz) => (
                           <Link
                             key={biz.id}
                             to={l(`/profile/${biz.slug}`)}
@@ -185,6 +184,7 @@ export default function AreaDetailPage() {
                   height="100%"
                   style={{ border: 0 }}
                   loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
                   src={`https://www.openstreetmap.org/export/embed.html?bbox=${area.longitude - 0.02}%2C${area.latitude - 0.015}%2C${area.longitude + 0.02}%2C${area.latitude + 0.015}&layer=mapnik&marker=${area.latitude}%2C${area.longitude}`}
                 />
               </div>

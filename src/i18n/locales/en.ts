@@ -84,7 +84,7 @@ const en = {
     heartOfGroupDesc: 'Calvia.app sits at the center of the calvia.group ecosystem -- your gateway to everything Calvia has to offer. Powered by calvia.digital, the technology arm that drives innovation and digital transformation for the entire region.',
     groupDesc: 'The umbrella organization connecting all digital services for the Calvia region. From business directories to lifestyle platforms, calvia.group brings together every tool residents and businesses need under one trusted brand.',
     digitalDesc: 'The tech powerhouse behind everything we build. calvia.digital provides cutting-edge digital solutions, web development, and consulting services that help local businesses compete in the modern digital landscape.',
-    ecosystem: 'The calvia.* Ecosystem',
+    ecosystem: 'The Calvia Ecosystem',
     domainApp: 'The Modern Yellow Pages',
     domainGroup: 'Umbrella organization',
     domainModernYP: 'The Modern Yellow Pages',
